@@ -1,0 +1,184 @@
+    1  ls
+    2  pwd
+    3  exit
+    4  pwd
+    5  exit
+    6  ssh eduardo.eras@lachibrido.cptec.inpe.br
+    7  exit
+    8  ssh eduardo.eras@lachibrido.cptec.inpe.br
+    9  exit
+   10  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   11  exit
+   12  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   13  exit
+   14  clear
+   15  ls -lah
+   16  scp eduardo.eras@lachibrido.cptec.inpe.br:/data/bam/Outside/bam_clima-1.2_126_28_CG/model/source.tar .
+   17  ls l
+   18  ls -l
+   19  pwd
+   20  exit
+   21  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   22  exit
+   23  clear
+   24  ls -l
+   25  rm source.tar 
+   26  ls -l
+   27  clear
+   28  ls -lah
+   29  clear
+   30  pwd
+   31  ls -lah
+   32  clear
+   33  ls -lh
+   34  scp source.tar eduardo.eras@lachibrido.cptec.inpe.br:/data/bam/Outside/bam_clima-1.2_126_28_CG/model
+   35  clear
+   36  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   37  clear
+   38  pwd
+   39  ls -l
+   40  clear
+   41  ls
+   42  scp source_atualizado.tar.gz eduardo.eras@lachibrido.cptec.inpe.br:/data/bam/Outside/bam_clima-1.2_126_28_CG/model
+   43  scp source_atualizado.tar.gz eduardo.eras@lachibrido.cptec.inpe.br:/data/bam/Outside/bam_clima-1.2_126_28_CG/model
+   44  scp source_atualizado.tar.gz eduardo.eras@lachibrido.cptec.inpe.br:/data/bam/bam_clima-1.2_126_28_CG/model
+   45  exit
+   46  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   47  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   48  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   49  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   50  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   51  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   52  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   53  ssh eduardo.eras@lachibrido.cptec.inpe.br
+   54  ping lachibrido.cptec.inpe.br
+   55  exit
+   56  pwd
+   57  df -h .
+   58  exit
+   59  pwd
+   60  ls -lah
+   61  ls -lh
+   62  exit
+   63  pwd
+   64  exit
+   65  pwd
+   66  ls -l
+   67  top
+   68  clear
+   69  ls
+   70  grads
+   71  module list
+   72  module avail
+   73  module load grads
+   74  grads
+   75  gradsclear
+   76  clear
+   77  grads --hel
+   78  clear
+   79  grads --help
+   80  clear
+   81  man grads
+   82  grads
+   83  clear
+   84  module availl
+   85  module availl | grep pyth
+   86  module availl | grep python
+   87  module availl | grep julia
+   88  clear
+   89  module availl | grep julia
+   90  clear
+   91  which python
+   92  clear
+   93  python --version
+   94  clear
+   95  module load cray-python/3.11.7(default)
+   96  module load cray-python/3.11.7
+   97  which python
+   98  cd /lustre
+   99  ls
+  100  cd /
+  101  ls
+  102  cd lustre
+  103  ls
+  104  cd projetos/
+  105  ls
+  106  cd monan_atm/
+  107  ls
+  108  cd ..
+  109  cd monan_adm/
+  110  ls
+  111  cd ../monan_das/
+  112  ls
+  113  cd ../monan_gam/
+  114  ls
+  115  cd ../monan_goc/
+  116  ls
+  117  cd ../monan_sfc/
+  118  ls
+  119  cd ~
+  120  ls
+  121  cd ..
+  122  ls
+  123  clear
+  124  cd eduardo.eras/
+  125  ls
+  126  clear
+  127  ls -l
+  128  ls
+  129  /p/projetos/monan_atm/
+  130  cd /p/projetos/monan_atm/
+  131  ls
+  132  clear
+  133  mkdir eduardo.eras
+  134  ls
+  135  cd eduardo.eras/
+  136  git clone https://github.com/eduardoeras/scripts_CD-CT.git
+  137  ls
+  138  cd scripts_CD-CT/
+  139  ls
+  140  git status
+  141  git checkout develop
+  142  git status
+  143  clear
+  144  ls
+  145  cd scripts
+  146  ls
+  147  ./1.install_monan.bash https://github.com/eduardoeras/MONAN-Model.git eduardo_eras_monan_develop 1.2.0
+  148  cd ..
+  149  ls -l
+  150  cd sources/
+  151  ls -l
+  152  cd MONAN-Model_eduardo_eras_monan_develop/
+  153  ls
+  154  cd ..
+  155  clear
+  156  cd MONAN-Model_eduardo_eras_monan_develop/
+  157  git status
+  158  clear
+  159  pwd
+  160  clear
+  161  cd ..
+  162  ls
+  163  cd scripts
+  164  ls
+  165  clear
+  166  ls
+  167  clear
+  168  cd ~
+  169  clear
+  170  ls
+  171  cd scripts_CD-CT/
+  172  cd s
+  173  cd scripts
+  174  clear
+  175  ls
+  176  ./2.pre_processing.bash GFS 40962 2025102500 24
+  177  ls
+  178  ./3.run_model.bash GFS 40962 2025102500 24
+  179  ls
+  180  ./4.run_post.bash GFS 40962 2025102500 24
+  181  cd ~
+  182  ls
+  183  history -> history.txt
+  184  history > history.txt

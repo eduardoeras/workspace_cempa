@@ -1,0 +1,18 @@
+January 13, 2025
+    GRADS Basics:
+        grads -b                        batch mode
+        grads -c "command"              run a command
+        grads -b -c "script.gs"         run a script in bach mode
+
+        quit                            exit grads
+        reinit                          reset everithing (close files)
+        reset                           reset settings (don't close files)
+        clear                           clear plot canvas
+
+        open file.clt                   opens a Control file 
+        sdfopen file.nc                 opens a NetCDF file
+        set dfile 1                     set default file as file 1
+        close 1                         close file 1
+
+        display var                     plot var to canvas
+        gxprint file.png y1080 x1920    export png output

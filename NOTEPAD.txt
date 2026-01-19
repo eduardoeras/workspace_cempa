@@ -16,3 +16,23 @@ January 13, 2025
 
         display var                     plot var to canvas
         gxprint file.png y1080 x1920    export png output
+
+January 19, 2025
+    Git commands (on synchronized directory):
+        git status          Fundamental current status of git synchronization
+        git pull            Download remote changes and merge
+
+        git add <file>
+        git commit -m <message>
+        git push
+
+        git remote -v       Show remote repositories
+        git diff            List unsychronized changes
+        git log             Show full commit history
+        git log --oneline   Show short commit history
+        git rm <file>       Remove tracked file
+
+    Conda:
+        module load anaconda/24.1.2     Load Conda module
+        which python                    Sanity check
+        conda activate workspace        Switch to user environment

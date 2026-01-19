@@ -36,3 +36,15 @@ January 19, 2025
         module load anaconda/24.1.2     Load Conda module
         which python                    Sanity check
         conda activate workspace        Switch to user environment
+
+    Bash:
+        file <file>         Gives inside information about the the file type.    
+
+    To Do:
+        Use the Wi-Fi
+
+    Parameterization:
+        Implement Taylor based on Yonsey University
+        Main goal: Run the YU twice, as two differente parameterization options
+        Focus on run the parameterizations offline
+        Attention: parameter call order is not linear, need to figure out how it works

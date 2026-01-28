@@ -26,6 +26,9 @@ January 19, 2025
         git commit -m <message>
         git push
 
+        git restore --source=origin/develop /file_to_be_restored
+        git checkout        change branch
+
         git remote -v       Show remote repositories
         git diff            List unsychronized changes
         git log             Show full commit history
@@ -35,6 +38,7 @@ January 19, 2025
     Conda:
         module load anaconda/24.1.2     Load Conda module
         which python                    Sanity check
+        conda init                      Start Conda
         conda activate workspace        Switch to user environment
 
     Bash:
@@ -44,7 +48,60 @@ January 19, 2025
         Use the Wi-Fi
 
     Parameterization:
-        Implement Taylor based on Yonsey University
+        Implement Taylor based on Yonsei University
         Main goal: Run the YU twice, as two differente parameterization options
         Focus on run the parameterizations offline
         Attention: parameter call order is not linear, need to figure out how it works
+
+January 27, 2026
+    MONAN 1.4.3-rc
+        ./1.install_monan.bash https://github.com/eduardoeras/MONAN-Model.git 1.4.3-rc 1.2.0
+        
+        git clone https://github.com/monanadmin/scripts_CD-CT.git
+        
+        git clone https://github.com/eduardoeras/scripts_CD-CT.git
+
+    MONAN Namelist Variables Cheat Sheet:
+        initial_time
+        xtime
+        Time
+        t_iso_levels
+        zgeo_isobaric
+        lonCell
+        latCell
+        temperature_isobaric
+        spechum_isobaric
+        relhum_isobaric
+        uzonal_isobaric
+        umeridional_isobaric
+        w_isobaric
+        surface_pressure
+        mslp
+        precipw
+        precipci
+        rainnc
+        rainc
+        qv_isobaric
+        qi_isobaric
+        qc_isobaric
+        qs_isobaric
+        cape
+        cin
+        acswdnb
+        acswdnbc
+        aclwupb
+        aclwupt
+        aclwuptc
+        u10
+        v10
+        q2
+        t2m
+        hfx
+        lh
+        cldfrac_tot_UPP
+        ter
+        landmask
+        omega_isobaric
+        radlw3d1
+        radsw3d1
+

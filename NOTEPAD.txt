@@ -115,3 +115,30 @@ January 28, 2026
         =>SandBox
             Pre     [OK]
             Model   [OK]
+    
+January 30, 2026
+
+    Scripts André:
+    /lustre/projetos/monan_gam/Scripts/Scripts_MONAN/
+
+    "Fazer alterações nos diretórios onde estão os dados e onde
+    ele vai escrever as figuras e o dado netcdf. As variáveis 
+    são essas: CAMINHO_BASE, caminho_out e caminho_netcdf"
+
+    "Eu rodo ele assim, passando alguns parâmetros na linha de 
+    comando: ano, mês, dia, hora inicial e o prazo: 
+    python  MONAN_nc_24h_acum_newcolorbar.py 2025 12 01 00 120"
+
+    "Eu carreguei um ambiente virtual do python para carregar
+    essas bibliotecas dessa forma: 
+    python -m venv ~/python_env
+    source ~/python_env/bin/activate
+    pip install h5py numpy matplotlib cartopy  ..."
+
+    "Figuras e os netcdfs da precipitação observada geradas aqui:
+    /pesq/share/monan/monan_gam/precip_24h/GPM_IMERG
+    /pesq/share/monan/monan_gam/precip_24h/MSWEP
+    /pesq/share/monan/monan_gam/precip_24h/GSMAP"
+
+    Condições iniciais:
+    lustre/projetos/monan_adm/monan/CIs/GFS

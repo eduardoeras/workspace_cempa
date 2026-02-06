@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Script para gerar MAE (Mean absolute Error) do MONAN em relação a GPM, GSMAP e MSWEP
+# Script para gerar MAE (Mean absolute Error) do MONAN em relaï¿½ï¿½o a GPM, GSMAP e MSWEP
 # Autor: Andre Lyra
 #
 # Uso: (Necessario ambiente python e cdo)
@@ -428,12 +428,12 @@ for lead in lead_times:
        }
     )
 
-# Arrays de saída
+# Arrays de saï¿½da
     diff_monan_gpm_out   = np.ascontiguousarray(diff_monan_gpm,   dtype='float32')
     diff_monan_gsmap_out = np.ascontiguousarray(diff_monan_gsmap, dtype='float32')
     diff_monan_mswep_out = np.ascontiguousarray(diff_monan_mswep, dtype='float32')
 
-# Dataset com múltiplas variáveis
+# Dataset com mï¿½ltiplas variï¿½veis
     ds = xr.Dataset(
     {
         'bias_monangpm':   (['lat', 'lon'], diff_monan_gpm_out),
@@ -446,7 +446,7 @@ for lead in lead_times:
     }
     )
 
-# Encoding para todas as variáveis
+# Encoding para todas as variï¿½veis
     encoding = {
     'bias_monangpm': {
         'dtype': 'float32',

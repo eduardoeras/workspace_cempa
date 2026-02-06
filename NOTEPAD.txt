@@ -61,6 +61,7 @@ January 27, 2026
         
         git clone https://github.com/eduardoeras/scripts_CD-CT.git
 
+
     MONAN Namelist Variables Cheat Sheet:
         initial_time
         xtime
@@ -141,4 +142,66 @@ January 30, 2026
     /pesq/share/monan/monan_gam/precip_24h/GSMAP"
 
     Condições iniciais:
-    lustre/projetos/monan_adm/monan/CIs/GFS
+    /lustre/projetos/monan_adm/monan/CIs/GFS
+
+February 2, 2026
+
+    "A variável  monan_nc deve apontar para os arquivos da sua rodada. 
+    Alterar também:  fig_dir , caminho_netcdf"
+
+    "Os arquivos netcdf (acumulados de 24h) do GPM, GSMAP e MSWEP eu já
+    tenho gerado desde 202511250000. Se o seu periodo das rodadas estiver
+    compreendido nesse mesmo período você pode usar eles mesmo."
+
+    "Como o script usa o CDO para compatibilizar as grades, vai precisar
+    carregar o módulo do CDO na JACI: module load cdo"
+
+    "Variáveis: BASE_MONAN, BASE_BIAS e DIR_OUT"
+
+February 3, 2026
+    Classic MONAN tutorial:
+        1 - Entrar na jaci no seu diretorio de trabalho ( /p/projetos/monan_atm/madeleine.gacita)
+        (aqui  você pode criar um diretório para realizar o teste)
+
+        2 - Download dos scripts ( git clone https://github.com/monanadmin/scripts_CD-CT.git)
+
+        3 - Entrar no diretório scripts_CD-CT e mudar para versão develop ( "cd scripts_CD-CT/"
+        e depois "git checkout develop"). Após isso entrar no diretório "scripts"
+
+        4 - Compilar o Monan  ( ./1.install_monan.bash
+        https://github.com/monanadmin/MONAN-Model.git 1.4.3-rc 1.2.0 )
+        --> instala o monan do github na versão 1.4.3 utilizando o convert_mpas 1.2.0
+
+        Se tudo der certo, voce ja compilou o Monan na jaci. Pode verificar o executável no
+        diretório execs (ls -l  ../execs).
+
+        5 - Execução do Pre  ( ./2.pre_processing.bash ${EXP} ${RES} ${YYYYMMDDHHi} ${FCST} ).
+        Exemplo resolução 10km e 24 horas forecast (  ./2.pre_processing.bash GFS  5898242
+        2025102500  24 )
+
+        5 - Execução do Model ( ./3.run_model.bash ${EXP} ${RES} ${YYYYMMDDHHi} ${FCST}).
+        Exemplo resolução 10km e 24 horas forecast ( ./3.run_model.bash GFS  5898242
+        2025102500  24 )
+
+        6 - Execução do Post ( ./4.run_post.bash ${EXP} ${RES} ${YYYYMMDDHHi} ${FCST}).
+        Exemplo resolução 10km e 24 horas forecast ( ./4.run_post.bash GFS  5898242  2025102500  24 )
+
+        Voce pode verificar as saídas em dataout ( ls -l ../dataout)
+    
+    ./1.install_monan.bash https://github.com/eduardoeras/MONAN-Model.git 1.4.3-rc 1.2.0
+        
+    git clone https://github.com/monanadmin/scripts_CD-CT.git
+        
+    git clone https://github.com/eduardoeras/scripts_CD-CT.git
+
+    Where things happens insid MONAN:
+    scripts_CD-CT/scripts/namelists
+
+    To Do:
+    Debug output is dumping garbage or not writting at all.
+
+February 4, 2026
+    /home2/eduardo.eras/workspace/python/output/GPM_IMERG/202511270000/GPM_IMERG_Precipitation_24h_accum_202511270000.nc
+    
+February 5, 2026
+    GitHub Dark Default - Color Theme

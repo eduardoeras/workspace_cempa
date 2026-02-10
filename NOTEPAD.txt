@@ -205,3 +205,32 @@ February 4, 2026
     
 February 5, 2026
     GitHub Dark Default - Color Theme
+
+
+        '/home2/eduardo.eras/workspace/NetCDFs/MONAN/2025112600/MONAN_Precipitation_24h_acum_2025112600_2025112700_024h.nc'
+    /home2/eduardo.eras/workspace/python/output/MONAN/2025112600/MONAN_Precipitation_24h_acum_2025112600_2025112700_024h.nc
+
+February 6, 2026
+    
+    To mandatory repertoire:
+        Odeon
+
+    BASH LOOPS:
+    for i in {1..5}; do
+        echo "$i"
+    done
+    echo "---------"
+
+    a=1
+    b=5
+    for (( i = a; i <= b; i++ )); do
+        echo "C style $i"
+    done
+    echo "---------"
+
+    a=1
+    b=5
+    while [ "$a" -le "$b" ]; do
+        echo "While $a"
+        a=$((a+1))
+    done

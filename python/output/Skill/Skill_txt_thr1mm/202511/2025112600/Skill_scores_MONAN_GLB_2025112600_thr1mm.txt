@@ -1,0 +1,19 @@
+# Skill Scores MONAN
+# Regiao = GLB
+# Threshold = 1 mm / 24h
+# Ciclo = 2025112600
+
+# Valores de referencia ideais
+# ACC_best=1.0  POD_best=1.0  POFD_best=0.0  FAR_best=0.0  CSI_best=1.0  F1_best=1.0
+
+ LEAD   REF     ACC     POD     POFD    FAR     CSI      F1   
+---------------------------------------------------------------
+ 024    GPM     0.87    0.80    0.12    0.48    0.46    0.63
+ 024   GSMAP    0.84    0.83    0.16    0.65    0.33    0.49
+ 024   MSWEP    0.87    0.69    0.08    0.27    0.55    0.71
+ 024    GPM     0.87    0.80    0.12    0.48    0.46    0.63
+ 024   GSMAP    0.84    0.83    0.16    0.65    0.33    0.49
+ 024   MSWEP    0.87    0.69    0.08    0.27    0.55    0.71
+ 024    GPM     0.86    0.76    0.12    0.40    0.50    0.67
+ 024   GSMAP    0.83    0.77    0.16    0.55    0.40    0.57
+ 024   MSWEP    0.87    0.77    0.09    0.30    0.58    0.73

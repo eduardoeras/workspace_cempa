@@ -25,7 +25,7 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 from pathlib import Path
 
 OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
-INPUT_PATH = "/p/projetos/monan_atm/eduardo.eras/dataout/"
+INPUT_PATH = "/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/"
 #INPUT_PATH = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/flushout/"
 NETCDF_OUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
 
@@ -79,7 +79,7 @@ for i in range(num_dias):
 # Montando nome dos arquivos
 #   CAMINHO_BASE = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/"
     CAMINHO_BASE = INPUT_PATH
-    DIR_DATA = f"{data_inicial}/"
+    DIR_DATA = f"{data_inicial}/Post/"
     PREFIXO_ARQ  = "MONAN_DIAG_G_POS_GFS_"
     SUFIXO_ARQ   = ".00.00.x655362L55.nc"
     #SUFIXO_ARQ   = ".00.00.x5898242L55.nc" 

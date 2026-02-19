@@ -26,9 +26,14 @@ skill="MONAN_Skill.py"
 module load cdo
 
 #Date range for the simulations
+
+#Full range simulation
 start_date="2025-11-26" 
-#end_date="2025-12-30"  #Full range simulation
-end_date="2025-11-27"   #Short range testing simulation
+end_date="2025-12-30"
+
+#Short range testing simulation
+#start_date="2025-12-29" 
+#end_date="2025-12-30"
 
 #Simulation span in hours (e.g., 120 for 5 days)
 LENGTH=120
@@ -38,6 +43,15 @@ start_ts=$(date -d "$start_date" +%s)
 end_ts=$(date -d "$end_date" +%s)
 
 print_header "* * *              MONAN Analysis starting...              * * *"
+
+echo -e "\n##############################################"
+echo "  _____   _______    ___    _____    _______  "
+echo " / ____| |__   __|  /   \  |  __ \  |__   __| " 
+echo "| (___      | |    /  ^  \ | |__) |    | |    "
+echo " \___ \     | |   /  /_\  \|  _  /     | |    "
+echo " ____) |    | |  /  _____  \ | \ \     | |    "
+echo "|_____/     |_| /__/     \__\|  \_\    |_|    "
+echo -e "##############################################\n"
 
 #Looping over dates (the sane way)
 #Strategy: Convert dates to Unix timestamps (seconds since 1970-01-01),
@@ -71,3 +85,12 @@ for (( ts = start_ts; ts <= end_ts; ts += 86400 )); do
 done
 
 print_header "* * *               MONAN Analysis finished.               * * *"
+
+echo -e "\n############################################"
+echo " ______  _____  _   _  _____  _____  _    _ "
+echo "|  ____||_   _|| \ | ||_   _|/ ____|| |  | |"
+echo "| |__     | |  |  \| |  | | | (___  | |__| |"
+echo "|  __|    | |  | .   |  | |  \___ \ |  __  |"
+echo "| |      _| |_ | |\  | _| |_ ____) || |  | |"
+echo "|_|     |_____||_| \_||_____||_____/|_|  |_|"
+echo -e "############################################\n"

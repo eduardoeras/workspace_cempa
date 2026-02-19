@@ -214,6 +214,7 @@ February 6, 2026
     
     To mandatory repertoire:
         Odeon
+        Scott Joplin
 
     BASH LOOPS:
     for i in {1..5}; do
@@ -235,10 +236,19 @@ February 6, 2026
         a=$((a+1))
     done
 
-February 10, 2025
+February 10, 2026
 
     '/home2/eduardo.eras/workspace/python/output/MONAN/2025112600/MONAN_Precipitation_24h_acum_2025112600_2025112800_048h.nc'
     '/home2/eduardo.eras/workspace/python/output/MONAN/2025112600/MONAN_Precipitation_24h_acum_2025112600_2025112700_024h.nc'
 
     '/p/projetos/monan_atm/eduardo.eras/                    dataout/2025112700     /MONAN_DIAG_G_POS_GFS_2025112700_2025112700.00.00.x655362L55.nc'
     '/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025112700/Post/MONAN_DIAG_G_POS_GFS_2025112700_2025112700.00.00.x655362L55.nc
+
+February 13, 2026
+
+    /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025121600/Post/MONAN_DIAG_G_POS_GFS_2025121600_2025121600.00.00.x655362L55.nc
+
+    ./MONAN_Analysis.sh 1 2>&1 | tee MONAN_Analysis_output.txt
+
+    To Do:
+        Plot Taylor and YSU on different directories to proper compare them. Currently, I'm using MYNN.

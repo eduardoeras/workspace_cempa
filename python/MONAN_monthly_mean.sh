@@ -34,7 +34,8 @@ else
 fi
 
 # Output directory
-OUTPUT_DIR=/home2/eduardo.eras/workspace/python/output/monthly_means
+#OUTPUT_DIR=/home2/eduardo.eras/workspace/python/output/monthly_means
+OUTPUT_DIR=/home2/eduardo.eras/workspace/python/output/10_days_means
 mkdir -p ${OUTPUT_DIR}
 
 #load CDO module for data manipulation

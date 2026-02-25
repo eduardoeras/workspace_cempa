@@ -38,25 +38,25 @@ PRAZO_INICIAL = 24
 PRAZO_FINAL   = 120
 PASSO_PRAZO   = 24
 
-THRESHOLD_MM = 1.0   # 1.0 2.0 5.0 10.0 20.0 50.0
+THRESHOLD_MM = 2.0   # 1.0 2.0 5.0 10.0 20.0 50.0
 
 MODELOS = ["MONAN", "BAM", "GFS"]
 REFERENCIAS = ["GPM", "GSMAP", "MSWEP"]
 
 DIR_CONT = (
-    #"/home2/eduardo.eras/workspace/python/output/monthly_means"
-    "/home2/eduardo.eras/workspace/python/output/10_days_means"
+    "/home2/eduardo.eras/workspace/python/output/monthly_means"
+    #"/home2/eduardo.eras/workspace/python/output/10_days_means"
 )
 
 DIR_TXT = (
-    #"/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
-    "/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
+    "/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
+    #"/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
     f"Skill_txt_thr{int(THRESHOLD_MM)}mm/{ANO}{MES:02d}/{ANO}{MES:02d}_aggregated"
 )
 
 DIR_FIG = (
-    #"/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
-    "/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
+    "/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
+    #"/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
     "Skill_fig_mensal"
 )
 

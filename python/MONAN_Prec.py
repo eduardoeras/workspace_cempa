@@ -24,10 +24,11 @@ from matplotlib import cm
 from matplotlib.colors import ListedColormap, BoundaryNorm 
 from pathlib import Path
 
-OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
-INPUT_PATH = "/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/"
-#INPUT_PATH = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/flushout/"
-NETCDF_OUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
+
+#OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
+#MONAN_PATH = "/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/"
+#MONAN_PATH = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/flushout/"
+#NETCDF_OUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
 
 parser = argparse.ArgumentParser(
         description="Gera acumulados de 24h para cada ciclo de previsao do MONAN.", 
@@ -43,7 +44,16 @@ parser.add_argument('HORA', type=str, help='Hora de inicializacao (Ex: 00)')
 # Argumento do prazo total
 parser.add_argument('PRAZO_H', type=int, help='Prazo total da previsao em horas (Ex: 72, 120)')
 
+# Argumentos dos caminhos de entrada e saída
+parser.add_argument('MONAN_PATH', type=str, help='Caminho base para os arquivos de entrada (NetCDF)')
+parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+
 args = parser.parse_args()
+
+# Processamento dos caminhos de entrada e saída
+MONAN_PATH = Path(args.MONAN_PATH)
+OUTPUT_PATH = Path(args.OUTPUT_PATH) / "MONAN"
+
 
 data_inicio_base = datetime.datetime(
      int(args.ANO), 
@@ -78,7 +88,7 @@ for i in range(num_dias):
     
 # Montando nome dos arquivos
 #   CAMINHO_BASE = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/"
-    CAMINHO_BASE = INPUT_PATH
+    CAMINHO_BASE = MONAN_PATH
     DIR_DATA = f"{data_inicial}/Post/"
     PREFIXO_ARQ  = "MONAN_DIAG_G_POS_GFS_"
     SUFIXO_ARQ   = ".00.00.x655362L55.nc"
@@ -243,7 +253,7 @@ for i in range(num_dias):
     )
 # Salvar figura
     nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_GLB.png"
-    caminho_out = f"{OUTPUT_PATH}{args.ANO}{args.MES}/{data_inicial}/"
+    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
     os.makedirs(caminho_out, exist_ok=True)
     plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
     plt.close(fig)
@@ -324,7 +334,7 @@ for i in range(num_dias):
     )
 # Salvar figura
     nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_AMS.png"
-    caminho_out = f"{OUTPUT_PATH}{args.ANO}{args.MES}/{data_inicial}/"
+    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
     plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -405,7 +415,7 @@ for i in range(num_dias):
     )
 # Salvar figura
     nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_ACC.png"
-    caminho_out = f"{OUTPUT_PATH}{args.ANO}{args.MES}/{data_inicial}/"
+    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
     plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -455,6 +465,6 @@ for i in range(num_dias):
 
 # Salva o arquivo NetCDF
     nome_arquivo = f"MONAN_Precipitation_24h_acum_{data_inicial}_{data_str_e}_{Fct}h.nc"
-    caminho_netcdf = Path(NETCDF_OUT_PATH) / data_inicial / nome_arquivo
+    caminho_netcdf = Path(OUTPUT_PATH) / data_inicial / nome_arquivo
     caminho_netcdf.parent.mkdir(parents=True, exist_ok=True)
     ds.to_netcdf(caminho_netcdf, encoding=encoding, format='NETCDF4')

@@ -31,12 +31,11 @@ from pathlib import Path
 
 os.environ["CARTOPY_DATA_DIR"] = "/lustre/projetos/monan_gam/andre.lyra/cartopy"
 
-OBS_REMAP_BASE = "/home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/"
-
-NETCDF_PATH = "/home2/eduardo.eras/workspace/NetCDFs/"
-NETCDF_MONAN_PATH = "/home2/eduardo.eras/workspace/python/output/"
+#OBS_REMAP_BASE = "/home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/"
+#NETCDF_PATH = "/home2/eduardo.eras/workspace/NetCDFs/"
+#NETCDF_MONAN_PATH = "/home2/eduardo.eras/workspace/python/output/"
 #NETCDF_PATH = "/lustre/projetos/monan_gam/andre.lyra/NetCDFs/precip_24h/"
-OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/"
+#OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/"
 
 # Argumentos
 parser = argparse.ArgumentParser(
@@ -50,7 +49,15 @@ parser.add_argument("DIA", type=str)
 parser.add_argument("HORA", type=str)
 parser.add_argument("PRAZO_H", type=int)
 
+# Argumentos dos caminhos de entrada e saída
+parser.add_argument('NETCDF_PATH', type=str, help='Caminho base para os arquivos de entrada (NetCDF)')
+parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+
 args = parser.parse_args()
+
+# Processamento dos caminhos de entrada e saída
+NETCDF_PATH = Path(args.NETCDF_PATH)
+OUTPUT_PATH = Path(args.OUTPUT_PATH)
 
 data_ini = datetime.datetime(
     int(args.ANO),
@@ -150,26 +157,26 @@ for lead in lead_times:
 
 # Caminhos dos arquivos
     monan_nc = (
-        f"{NETCDF_MONAN_PATH}"
-        f"MONAN/{ciclo_str}/"
+        f"{OUTPUT_PATH}"
+        f"/MONAN/{ciclo_str}/"
         f"MONAN_Precipitation_24h_acum_{data_ini_str}_{data_fim_str}_{lead:03d}h.nc"
     )
 
     gpm_nc = (
         f"{NETCDF_PATH}"
-        f"GPM_IMERG/{data_fim_str}00/"
+        f"/GPM_IMERG/{data_fim_str}00/"
         f"GPM_IMERG_Precipitation_24h_accum_{data_fim_str}00.nc"
     )
 
     gsmap_nc = (
         f"{NETCDF_PATH}"
-        f"GSMAP/{data_fim_str}00/"
+        f"/GSMAP/{data_fim_str}00/"
         f"GSMAP_Precipitation_24h_accum_{data_fim_str}00.nc"
     )
 
     mswep_nc = (
         f"{NETCDF_PATH}"
-        f"MSWEP/{data_fim_str}00/"
+        f"/MSWEP/{data_fim_str}00/"
         f"MSWEP_Precipitation_24h_accum_{data_fim_str}00.nc"
     )
 
@@ -179,20 +186,20 @@ for lead in lead_times:
     #mswep_remap = mswep_nc.replace(".nc", "_MONAN_grid.nc")
 
     gpm_remap = (
-        f"{OBS_REMAP_BASE}"
-        f"GPM_IMERG/{data_fim_str}00/"
+        f"{NETCDF_PATH}"
+        f"/Remapped_30km/GPM_IMERG/{data_fim_str}00/"
         f"GPM_IMERG_Precipitation_24h_accum_{data_fim_str}00_MONAN_30km.nc"
     )
 
     gsmap_remap = (
-        f"{OBS_REMAP_BASE}"
-        f"GSMAP/{data_fim_str}00/"
+        f"{NETCDF_PATH}"
+        f"/Remapped_30km/GSMAP/{data_fim_str}00/"
         f"GSMAP_Precipitation_24h_accum_{data_fim_str}00_MONAN_30km.nc"
     )
 
     mswep_remap = (
-        f"{OBS_REMAP_BASE}"
-        f"MSWEP/{data_fim_str}00/"
+        f"{NETCDF_PATH}"
+        f"/Remapped_30km/MSWEP/{data_fim_str}00/"
         f"MSWEP_Precipitation_24h_accum_{data_fim_str}00_MONAN_30km.nc"
     )
 
@@ -231,7 +238,7 @@ for lead in lead_times:
     abs_err_mswep = np.abs(diff_mswep)
 
 # Diretorio de saida das figuras
-    fig_dir = f"{OUTPUT_PATH}MAE/{args.ANO}{args.MES}/{ciclo_str}/"
+    fig_dir = f"{OUTPUT_PATH}/MAE/{args.ANO}{args.MES}/{ciclo_str}/"
     os.makedirs(fig_dir, exist_ok=True)
 
 # ===============================
@@ -341,7 +348,7 @@ for lead in lead_times:
     )
 
     out_dir = Path(
-        f"{OUTPUT_PATH}precip_24h/RMSE/{data_ini_str}"
+        f"{OUTPUT_PATH}/precip_24h/RMSE/{data_ini_str}"
     )
     out_dir.mkdir(parents=True, exist_ok=True)
 

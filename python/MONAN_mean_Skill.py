@@ -18,6 +18,7 @@
 # Autor: Andre Lyra
 #
 
+import argparse
 import os
 import numpy as np
 import xarray as xr
@@ -27,36 +28,59 @@ import cartopy.feature as cfeature
 from pathlib import Path
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 
+# ==========================================================
+# ARGUMENTOS
+# ==========================================================
+
+parser = argparse.ArgumentParser(
+    description="Gera figuras de bias medio para um mes especifico.",
+    formatter_class=argparse.RawTextHelpFormatter
+)
+
+parser.add_argument("ANO", type=str)
+parser.add_argument("MES", type=str)
+parser.add_argument("THRESHOLD", type=str, help="Valor do limiar de precipitação (ex: 1.0, 5.0, etc.)")
+parser.add_argument('ANALYSIS_NAME', type=str, help='Nome do conjunto de analises (ex: monthly_means, 10_days_means, etc.)')
+parser.add_argument('NETCDF_PATH', type=str, help='Caminho base para os arquivos de comparação (NetCDF)')
+parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+
+args = parser.parse_args()
+
+ANO = int(args.ANO)
+MES = int(args.MES)
+THRESHOLD = float(args.THRESHOLD)
+ANALYSIS_NAME = args.ANALYSIS_NAME
+NETCDF_PATH = Path(args.NETCDF_PATH)
+OUTPUT_PATH = Path(args.OUTPUT_PATH)
 
 # ==========================================================
 # PARAMETROS
 # ==========================================================
-ANO = 2025
-MES = 12
 
 PRAZO_INICIAL = 24
 PRAZO_FINAL   = 120
 PASSO_PRAZO   = 24
 
-THRESHOLD_MM = 2.0   # 1.0 2.0 5.0 10.0 20.0 50.0
-
 MODELOS = ["MONAN", "BAM", "GFS"]
 REFERENCIAS = ["GPM", "GSMAP", "MSWEP"]
 
-DIR_CONT = (
-    "/home2/eduardo.eras/workspace/python/output/monthly_means"
-    #"/home2/eduardo.eras/workspace/python/output/10_days_means"
+#Input directories
+DIR_REFERENCE = (
+    f"{NETCDF_PATH}/Skill"
 )
 
+DIR_MONAN = (
+    f"{OUTPUT_PATH}/{ANALYSIS_NAME}"
+)
+
+# Output directories
 DIR_TXT = (
-    "/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
-    #"/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
-    f"Skill_txt_thr{int(THRESHOLD_MM)}mm/{ANO}{MES:02d}/{ANO}{MES:02d}_aggregated"
+    f"{OUTPUT_PATH}/Skill/{ANALYSIS_NAME}/"
+    f"Skill_txt_thr{int(THRESHOLD)}mm/{ANO}{MES:02d}/{ANO}{MES:02d}_aggregated"
 )
 
 DIR_FIG = (
-    "/home2/eduardo.eras/workspace/python/output/Skill/30_days/"
-    #"/home2/eduardo.eras/workspace/python/output/Skill/10_days/"
+    f"{OUTPUT_PATH}/Skill/{ANALYSIS_NAME}/"
     "Skill_fig_mensal"
 )
 
@@ -187,7 +211,7 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
         for modelo in MODELOS:
             txt_path = (
                 f"{DIR_TXT}/Skill_{modelo}_{dominio}_"
-                f"{ANO}{MES:02d}_thr{int(THRESHOLD_MM)}mm.txt"
+                f"{ANO}{MES:02d}_thr{int(THRESHOLD)}mm.txt"
             )
             txt_files[modelo] = txt_path
 
@@ -196,7 +220,7 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
                     f.write("# Skill Scores mensais\n")
                     f.write(f"# Modelo = {modelo}\n")
                     f.write(f"# Regiao = {dominio}\n")
-                    f.write(f"# Threshold = {THRESHOLD_MM} mm / 24h\n")
+                    f.write(f"# Threshold = {THRESHOLD} mm / 24h\n")
                     f.write(f"# Periodo = {ANO}{MES}\n\n")
 
                     f.write("# Valores de referencia ideais\n")
@@ -233,11 +257,18 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
 
         for modelo in MODELOS:
 
-            nc = (
-                f"{DIR_CONT}/"
-                f"CONT_{modelo}_{ANO}{MES:02d}_sum_"
-                f"{lead:03d}h_thr{int(THRESHOLD_MM)}mm.nc"
-            )
+            if modelo == "MONAN":
+                nc= (
+                    f"{DIR_MONAN}/"
+                    f"CONT_{modelo}_{ANO}{MES:02d}_sum_"
+                    f"{lead:03d}h_thr{int(THRESHOLD)}mm.nc"
+                )
+            else:
+                nc = (
+                    f"{DIR_REFERENCE}/"
+                    f"CONT_{modelo}_{ANO}{MES:02d}_sum_"
+                    f"{lead:03d}h_thr{int(THRESHOLD)}mm.nc"
+                )
 
             ds = xr.open_dataset(nc)
 
@@ -340,13 +371,13 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
 
             fig.suptitle(
                 f"{indice} mensal | {ANO}{MES:02d} | "
-                f"F{lead:03d} | Thr {THRESHOLD_MM} mm | {dominio}",
+                f"F{lead:03d} | Thr {THRESHOLD} mm | {dominio}",
                 fontsize=15
             )
 
             fig.savefig(
                 f"{DIR_FIG}/{indice}_{dominio}_{ANO}{MES:02d}_"
-                f"p{lead:03d}h_thr{int(THRESHOLD_MM)}mm.png",
+                f"p{lead:03d}h_thr{int(THRESHOLD)}mm.png",
                 dpi=300,
                 bbox_inches="tight"
             )

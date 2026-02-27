@@ -320,7 +320,10 @@ for lead in lead_times:
     )
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    ds_out.to_netcdf(
-        out_dir / f"CONT_MONAN_{data_ini_str}_{lead:03d}h_thr{int(THRESHOLD_MM)}mm.nc",
-        format="NETCDF4"
-    )
+    out_path = out_dir / f"CONT_MONAN_{data_ini_str}_{lead:03d}h_thr{int(THRESHOLD_MM)}mm.nc"
+    print(f"Saving contingency NetCDF: {out_path}")
+    try:
+        ds_out.to_netcdf(out_path, format="NETCDF4", mode="w")
+        print(f"Saved: {out_path}")
+    except Exception as e:
+        print(f"ERROR saving {out_path}: {e}")

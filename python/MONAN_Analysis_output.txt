@@ -15,6 +15,1210 @@
 
 
 ################################################################
+* * * Simulation for date: 2025 12 25 with span: 120 hours * * *
+################################################################
+
+
+----------------------------------------------------------------
+24 hours precipitation accumulation
+----------------------------------------------------------------
+
+
+============================================================
+PROCESSAMENTO DE 5 PERIODOS DE 24 HORAS
+============================================================
+--- Acumulado 1 --- Previsao 024h ---
+Data Inicial: 2025-12-25 00:00:00
+Data Final:   2025-12-26 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122500.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122600.00.00.x655362L55.nc
+============================================================
+--- Acumulado 2 --- Previsao 048h ---
+Data Inicial: 2025-12-26 00:00:00
+Data Final:   2025-12-27 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122600.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122700.00.00.x655362L55.nc
+============================================================
+--- Acumulado 3 --- Previsao 072h ---
+Data Inicial: 2025-12-27 00:00:00
+Data Final:   2025-12-28 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122700.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122800.00.00.x655362L55.nc
+============================================================
+--- Acumulado 4 --- Previsao 096h ---
+Data Inicial: 2025-12-28 00:00:00
+Data Final:   2025-12-29 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122800.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122900.00.00.x655362L55.nc
+============================================================
+--- Acumulado 5 --- Previsao 120h ---
+Data Inicial: 2025-12-29 00:00:00
+Data Final:   2025-12-30 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025122900.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122500/Post/MONAN_DIAG_G_POS_GFS_2025122500_2025123000.00.00.x655362L55.nc
+============================================================
+
+----------------------------------------------------------------
+Bias analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122500 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122500/MONAN_Precipitation_24h_acum_2025122500_2025122600_024h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512260000/GPM_IMERG_Precipitation_24h_accum_202512260000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512260000/GSMAP_Precipitation_24h_accum_202512260000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512260000/MSWEP_Precipitation_24h_accum_202512260000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512260000/GPM_IMERG_Precipitation_24h_accum_202512260000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512260000/GSMAP_Precipitation_24h_accum_202512260000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512260000/MSWEP_Precipitation_24h_accum_202512260000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_024h.png
+Figura salva: diff_MONAN_GSMAP_GLB_024h.png
+Figura salva: diff_MONAN_MSWEP_GLB_024h.png
+Figura salva: diff_MONAN_GPM_AMS_024h.png
+Figura salva: diff_MONAN_GSMAP_AMS_024h.png
+Figura salva: diff_MONAN_MSWEP_AMS_024h.png
+Figura salva: diff_MONAN_GPM_ACC_024h.png
+Figura salva: diff_MONAN_GSMAP_ACC_024h.png
+Figura salva: diff_MONAN_MSWEP_ACC_024h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122500/Bias_MONAN_Prec_2025122500_024h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122500/MONAN_Precipitation_24h_acum_2025122500_2025122700_048h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512270000/GPM_IMERG_Precipitation_24h_accum_202512270000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512270000/GSMAP_Precipitation_24h_accum_202512270000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512270000/MSWEP_Precipitation_24h_accum_202512270000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512270000/GPM_IMERG_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512270000/GSMAP_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512270000/MSWEP_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_048h.png
+Figura salva: diff_MONAN_GSMAP_GLB_048h.png
+Figura salva: diff_MONAN_MSWEP_GLB_048h.png
+Figura salva: diff_MONAN_GPM_AMS_048h.png
+Figura salva: diff_MONAN_GSMAP_AMS_048h.png
+Figura salva: diff_MONAN_MSWEP_AMS_048h.png
+Figura salva: diff_MONAN_GPM_ACC_048h.png
+Figura salva: diff_MONAN_GSMAP_ACC_048h.png
+Figura salva: diff_MONAN_MSWEP_ACC_048h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122500/Bias_MONAN_Prec_2025122500_048h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122500/MONAN_Precipitation_24h_acum_2025122500_2025122800_072h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_072h.png
+Figura salva: diff_MONAN_GSMAP_GLB_072h.png
+Figura salva: diff_MONAN_MSWEP_GLB_072h.png
+Figura salva: diff_MONAN_GPM_AMS_072h.png
+Figura salva: diff_MONAN_GSMAP_AMS_072h.png
+Figura salva: diff_MONAN_MSWEP_AMS_072h.png
+Figura salva: diff_MONAN_GPM_ACC_072h.png
+Figura salva: diff_MONAN_GSMAP_ACC_072h.png
+Figura salva: diff_MONAN_MSWEP_ACC_072h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122500/Bias_MONAN_Prec_2025122500_072h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122500/MONAN_Precipitation_24h_acum_2025122500_2025122900_096h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_096h.png
+Figura salva: diff_MONAN_GSMAP_GLB_096h.png
+Figura salva: diff_MONAN_MSWEP_GLB_096h.png
+Figura salva: diff_MONAN_GPM_AMS_096h.png
+Figura salva: diff_MONAN_GSMAP_AMS_096h.png
+Figura salva: diff_MONAN_MSWEP_AMS_096h.png
+Figura salva: diff_MONAN_GPM_ACC_096h.png
+Figura salva: diff_MONAN_GSMAP_ACC_096h.png
+Figura salva: diff_MONAN_MSWEP_ACC_096h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122500/Bias_MONAN_Prec_2025122500_096h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122500/MONAN_Precipitation_24h_acum_2025122500_2025123000_120h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_120h.png
+Figura salva: diff_MONAN_GSMAP_GLB_120h.png
+Figura salva: diff_MONAN_MSWEP_GLB_120h.png
+Figura salva: diff_MONAN_GPM_AMS_120h.png
+Figura salva: diff_MONAN_GSMAP_AMS_120h.png
+Figura salva: diff_MONAN_MSWEP_AMS_120h.png
+Figura salva: diff_MONAN_GPM_ACC_120h.png
+Figura salva: diff_MONAN_GSMAP_ACC_120h.png
+Figura salva: diff_MONAN_MSWEP_ACC_120h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122500/Bias_MONAN_Prec_2025122500_120h.nc
+
+----------------------------------------------------------------
+MAE analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122500 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+
+----------------------------------------------------------------
+Skill score analysis
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 1 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr1mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr1mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr1mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr1mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr1mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 2 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr2mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr2mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr2mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr2mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr2mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 5 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr5mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr5mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr5mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr5mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr5mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 10 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr10mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr10mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr10mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr10mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr10mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 20 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr20mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr20mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr20mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr20mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr20mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 50 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_024h_thr50mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_048h_thr50mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_072h_thr50mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_096h_thr50mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122500/CONT_MONAN_2025122500_120h_thr50mm.nc
+
+################################################################
+* * * Simulation for date: 2025 12 26 with span: 120 hours * * *
+################################################################
+
+
+----------------------------------------------------------------
+24 hours precipitation accumulation
+----------------------------------------------------------------
+
+
+============================================================
+PROCESSAMENTO DE 5 PERIODOS DE 24 HORAS
+============================================================
+--- Acumulado 1 --- Previsao 024h ---
+Data Inicial: 2025-12-26 00:00:00
+Data Final:   2025-12-27 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122600.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122700.00.00.x655362L55.nc
+============================================================
+--- Acumulado 2 --- Previsao 048h ---
+Data Inicial: 2025-12-27 00:00:00
+Data Final:   2025-12-28 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122700.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122800.00.00.x655362L55.nc
+============================================================
+--- Acumulado 3 --- Previsao 072h ---
+Data Inicial: 2025-12-28 00:00:00
+Data Final:   2025-12-29 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122800.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122900.00.00.x655362L55.nc
+============================================================
+--- Acumulado 4 --- Previsao 096h ---
+Data Inicial: 2025-12-29 00:00:00
+Data Final:   2025-12-30 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025122900.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025123000.00.00.x655362L55.nc
+============================================================
+--- Acumulado 5 --- Previsao 120h ---
+Data Inicial: 2025-12-30 00:00:00
+Data Final:   2025-12-31 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025123000.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122600/Post/MONAN_DIAG_G_POS_GFS_2025122600_2025123100.00.00.x655362L55.nc
+============================================================
+
+----------------------------------------------------------------
+Bias analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122600 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122600/MONAN_Precipitation_24h_acum_2025122600_2025122700_024h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512270000/GPM_IMERG_Precipitation_24h_accum_202512270000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512270000/GSMAP_Precipitation_24h_accum_202512270000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512270000/MSWEP_Precipitation_24h_accum_202512270000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512270000/GPM_IMERG_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512270000/GSMAP_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512270000/MSWEP_Precipitation_24h_accum_202512270000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_024h.png
+Figura salva: diff_MONAN_GSMAP_GLB_024h.png
+Figura salva: diff_MONAN_MSWEP_GLB_024h.png
+Figura salva: diff_MONAN_GPM_AMS_024h.png
+Figura salva: diff_MONAN_GSMAP_AMS_024h.png
+Figura salva: diff_MONAN_MSWEP_AMS_024h.png
+Figura salva: diff_MONAN_GPM_ACC_024h.png
+Figura salva: diff_MONAN_GSMAP_ACC_024h.png
+Figura salva: diff_MONAN_MSWEP_ACC_024h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122600/Bias_MONAN_Prec_2025122600_024h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122600/MONAN_Precipitation_24h_acum_2025122600_2025122800_048h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_048h.png
+Figura salva: diff_MONAN_GSMAP_GLB_048h.png
+Figura salva: diff_MONAN_MSWEP_GLB_048h.png
+Figura salva: diff_MONAN_GPM_AMS_048h.png
+Figura salva: diff_MONAN_GSMAP_AMS_048h.png
+Figura salva: diff_MONAN_MSWEP_AMS_048h.png
+Figura salva: diff_MONAN_GPM_ACC_048h.png
+Figura salva: diff_MONAN_GSMAP_ACC_048h.png
+Figura salva: diff_MONAN_MSWEP_ACC_048h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122600/Bias_MONAN_Prec_2025122600_048h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122600/MONAN_Precipitation_24h_acum_2025122600_2025122900_072h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_072h.png
+Figura salva: diff_MONAN_GSMAP_GLB_072h.png
+Figura salva: diff_MONAN_MSWEP_GLB_072h.png
+Figura salva: diff_MONAN_GPM_AMS_072h.png
+Figura salva: diff_MONAN_GSMAP_AMS_072h.png
+Figura salva: diff_MONAN_MSWEP_AMS_072h.png
+Figura salva: diff_MONAN_GPM_ACC_072h.png
+Figura salva: diff_MONAN_GSMAP_ACC_072h.png
+Figura salva: diff_MONAN_MSWEP_ACC_072h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122600/Bias_MONAN_Prec_2025122600_072h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122600/MONAN_Precipitation_24h_acum_2025122600_2025123000_096h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_096h.png
+Figura salva: diff_MONAN_GSMAP_GLB_096h.png
+Figura salva: diff_MONAN_MSWEP_GLB_096h.png
+Figura salva: diff_MONAN_GPM_AMS_096h.png
+Figura salva: diff_MONAN_GSMAP_AMS_096h.png
+Figura salva: diff_MONAN_MSWEP_AMS_096h.png
+Figura salva: diff_MONAN_GPM_ACC_096h.png
+Figura salva: diff_MONAN_GSMAP_ACC_096h.png
+Figura salva: diff_MONAN_MSWEP_ACC_096h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122600/Bias_MONAN_Prec_2025122600_096h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122600/MONAN_Precipitation_24h_acum_2025122600_2025123100_120h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_120h.png
+Figura salva: diff_MONAN_GSMAP_GLB_120h.png
+Figura salva: diff_MONAN_MSWEP_GLB_120h.png
+Figura salva: diff_MONAN_GPM_AMS_120h.png
+Figura salva: diff_MONAN_GSMAP_AMS_120h.png
+Figura salva: diff_MONAN_MSWEP_AMS_120h.png
+Figura salva: diff_MONAN_GPM_ACC_120h.png
+Figura salva: diff_MONAN_GSMAP_ACC_120h.png
+Figura salva: diff_MONAN_MSWEP_ACC_120h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122600/Bias_MONAN_Prec_2025122600_120h.nc
+
+----------------------------------------------------------------
+MAE analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122600 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+
+----------------------------------------------------------------
+Skill score analysis
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 1 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr1mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr1mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr1mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr1mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr1mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 2 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr2mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr2mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr2mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr2mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr2mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 5 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr5mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr5mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr5mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr5mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr5mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 10 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr10mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr10mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr10mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr10mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr10mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 20 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr20mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr20mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr20mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr20mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr20mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 50 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_024h_thr50mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_048h_thr50mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_072h_thr50mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_096h_thr50mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122600/CONT_MONAN_2025122600_120h_thr50mm.nc
+
+################################################################
+* * * Simulation for date: 2025 12 27 with span: 120 hours * * *
+################################################################
+
+
+----------------------------------------------------------------
+24 hours precipitation accumulation
+----------------------------------------------------------------
+
+
+============================================================
+PROCESSAMENTO DE 5 PERIODOS DE 24 HORAS
+============================================================
+--- Acumulado 1 --- Previsao 024h ---
+Data Inicial: 2025-12-27 00:00:00
+Data Final:   2025-12-28 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025122700.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025122800.00.00.x655362L55.nc
+============================================================
+--- Acumulado 2 --- Previsao 048h ---
+Data Inicial: 2025-12-28 00:00:00
+Data Final:   2025-12-29 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025122800.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025122900.00.00.x655362L55.nc
+============================================================
+--- Acumulado 3 --- Previsao 072h ---
+Data Inicial: 2025-12-29 00:00:00
+Data Final:   2025-12-30 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025122900.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025123000.00.00.x655362L55.nc
+============================================================
+--- Acumulado 4 --- Previsao 096h ---
+Data Inicial: 2025-12-30 00:00:00
+Data Final:   2025-12-31 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025123000.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025123100.00.00.x655362L55.nc
+============================================================
+--- Acumulado 5 --- Previsao 120h ---
+Data Inicial: 2025-12-31 00:00:00
+Data Final:   2026-01-01 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2025123100.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122700/Post/MONAN_DIAG_G_POS_GFS_2025122700_2026010100.00.00.x655362L55.nc
+============================================================
+
+----------------------------------------------------------------
+Bias analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122700 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122700/MONAN_Precipitation_24h_acum_2025122700_2025122800_024h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512280000/GPM_IMERG_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512280000/GSMAP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512280000/MSWEP_Precipitation_24h_accum_202512280000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_024h.png
+Figura salva: diff_MONAN_GSMAP_GLB_024h.png
+Figura salva: diff_MONAN_MSWEP_GLB_024h.png
+Figura salva: diff_MONAN_GPM_AMS_024h.png
+Figura salva: diff_MONAN_GSMAP_AMS_024h.png
+Figura salva: diff_MONAN_MSWEP_AMS_024h.png
+Figura salva: diff_MONAN_GPM_ACC_024h.png
+Figura salva: diff_MONAN_GSMAP_ACC_024h.png
+Figura salva: diff_MONAN_MSWEP_ACC_024h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122700/Bias_MONAN_Prec_2025122700_024h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122700/MONAN_Precipitation_24h_acum_2025122700_2025122900_048h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_048h.png
+Figura salva: diff_MONAN_GSMAP_GLB_048h.png
+Figura salva: diff_MONAN_MSWEP_GLB_048h.png
+Figura salva: diff_MONAN_GPM_AMS_048h.png
+Figura salva: diff_MONAN_GSMAP_AMS_048h.png
+Figura salva: diff_MONAN_MSWEP_AMS_048h.png
+Figura salva: diff_MONAN_GPM_ACC_048h.png
+Figura salva: diff_MONAN_GSMAP_ACC_048h.png
+Figura salva: diff_MONAN_MSWEP_ACC_048h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122700/Bias_MONAN_Prec_2025122700_048h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122700/MONAN_Precipitation_24h_acum_2025122700_2025123000_072h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_072h.png
+Figura salva: diff_MONAN_GSMAP_GLB_072h.png
+Figura salva: diff_MONAN_MSWEP_GLB_072h.png
+Figura salva: diff_MONAN_GPM_AMS_072h.png
+Figura salva: diff_MONAN_GSMAP_AMS_072h.png
+Figura salva: diff_MONAN_MSWEP_AMS_072h.png
+Figura salva: diff_MONAN_GPM_ACC_072h.png
+Figura salva: diff_MONAN_GSMAP_ACC_072h.png
+Figura salva: diff_MONAN_MSWEP_ACC_072h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122700/Bias_MONAN_Prec_2025122700_072h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122700/MONAN_Precipitation_24h_acum_2025122700_2025123100_096h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_096h.png
+Figura salva: diff_MONAN_GSMAP_GLB_096h.png
+Figura salva: diff_MONAN_MSWEP_GLB_096h.png
+Figura salva: diff_MONAN_GPM_AMS_096h.png
+Figura salva: diff_MONAN_GSMAP_AMS_096h.png
+Figura salva: diff_MONAN_MSWEP_AMS_096h.png
+Figura salva: diff_MONAN_GPM_ACC_096h.png
+Figura salva: diff_MONAN_GSMAP_ACC_096h.png
+Figura salva: diff_MONAN_MSWEP_ACC_096h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122700/Bias_MONAN_Prec_2025122700_096h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122700/MONAN_Precipitation_24h_acum_2025122700_2026010100_120h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202601010000/GPM_IMERG_Precipitation_24h_accum_202601010000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202601010000/GSMAP_Precipitation_24h_accum_202601010000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202601010000/MSWEP_Precipitation_24h_accum_202601010000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202601010000/GPM_IMERG_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202601010000/GSMAP_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202601010000/MSWEP_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_120h.png
+Figura salva: diff_MONAN_GSMAP_GLB_120h.png
+Figura salva: diff_MONAN_MSWEP_GLB_120h.png
+Figura salva: diff_MONAN_GPM_AMS_120h.png
+Figura salva: diff_MONAN_GSMAP_AMS_120h.png
+Figura salva: diff_MONAN_MSWEP_AMS_120h.png
+Figura salva: diff_MONAN_GPM_ACC_120h.png
+Figura salva: diff_MONAN_GSMAP_ACC_120h.png
+Figura salva: diff_MONAN_MSWEP_ACC_120h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122700/Bias_MONAN_Prec_2025122700_120h.nc
+
+----------------------------------------------------------------
+MAE analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122700 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+
+----------------------------------------------------------------
+Skill score analysis
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 1 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr1mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr1mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr1mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr1mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr1mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 2 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr2mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr2mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr2mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr2mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr2mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 5 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr5mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr5mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr5mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr5mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr5mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 10 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr10mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr10mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr10mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr10mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr10mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 20 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr20mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr20mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr20mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr20mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr20mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 50 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_024h_thr50mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_048h_thr50mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_072h_thr50mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_096h_thr50mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122700/CONT_MONAN_2025122700_120h_thr50mm.nc
+
+################################################################
+* * * Simulation for date: 2025 12 28 with span: 120 hours * * *
+################################################################
+
+
+----------------------------------------------------------------
+24 hours precipitation accumulation
+----------------------------------------------------------------
+
+
+============================================================
+PROCESSAMENTO DE 5 PERIODOS DE 24 HORAS
+============================================================
+--- Acumulado 1 --- Previsao 024h ---
+Data Inicial: 2025-12-28 00:00:00
+Data Final:   2025-12-29 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025122800.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025122900.00.00.x655362L55.nc
+============================================================
+--- Acumulado 2 --- Previsao 048h ---
+Data Inicial: 2025-12-29 00:00:00
+Data Final:   2025-12-30 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025122900.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025123000.00.00.x655362L55.nc
+============================================================
+--- Acumulado 3 --- Previsao 072h ---
+Data Inicial: 2025-12-30 00:00:00
+Data Final:   2025-12-31 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025123000.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025123100.00.00.x655362L55.nc
+============================================================
+--- Acumulado 4 --- Previsao 096h ---
+Data Inicial: 2025-12-31 00:00:00
+Data Final:   2026-01-01 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2025123100.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2026010100.00.00.x655362L55.nc
+============================================================
+--- Acumulado 5 --- Previsao 120h ---
+Data Inicial: 2026-01-01 00:00:00
+Data Final:   2026-01-02 00:00:00
+Arquivo I: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2026010100.00.00.x655362L55.nc
+Arquivo E: /p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/2025122800/Post/MONAN_DIAG_G_POS_GFS_2025122800_2026010200.00.00.x655362L55.nc
+============================================================
+
+----------------------------------------------------------------
+Bias analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122800 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122800/MONAN_Precipitation_24h_acum_2025122800_2025122900_024h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512290000/GPM_IMERG_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512290000/GSMAP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512290000/MSWEP_Precipitation_24h_accum_202512290000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_024h.png
+Figura salva: diff_MONAN_GSMAP_GLB_024h.png
+Figura salva: diff_MONAN_MSWEP_GLB_024h.png
+Figura salva: diff_MONAN_GPM_AMS_024h.png
+Figura salva: diff_MONAN_GSMAP_AMS_024h.png
+Figura salva: diff_MONAN_MSWEP_AMS_024h.png
+Figura salva: diff_MONAN_GPM_ACC_024h.png
+Figura salva: diff_MONAN_GSMAP_ACC_024h.png
+Figura salva: diff_MONAN_MSWEP_ACC_024h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122800/Bias_MONAN_Prec_2025122800_024h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122800/MONAN_Precipitation_24h_acum_2025122800_2025123000_048h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512300000/GPM_IMERG_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512300000/GSMAP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512300000/MSWEP_Precipitation_24h_accum_202512300000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_048h.png
+Figura salva: diff_MONAN_GSMAP_GLB_048h.png
+Figura salva: diff_MONAN_MSWEP_GLB_048h.png
+Figura salva: diff_MONAN_GPM_AMS_048h.png
+Figura salva: diff_MONAN_GSMAP_AMS_048h.png
+Figura salva: diff_MONAN_MSWEP_AMS_048h.png
+Figura salva: diff_MONAN_GPM_ACC_048h.png
+Figura salva: diff_MONAN_GSMAP_ACC_048h.png
+Figura salva: diff_MONAN_MSWEP_ACC_048h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122800/Bias_MONAN_Prec_2025122800_048h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122800/MONAN_Precipitation_24h_acum_2025122800_2025123100_072h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202512310000/GPM_IMERG_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202512310000/GSMAP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202512310000/MSWEP_Precipitation_24h_accum_202512310000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_072h.png
+Figura salva: diff_MONAN_GSMAP_GLB_072h.png
+Figura salva: diff_MONAN_MSWEP_GLB_072h.png
+Figura salva: diff_MONAN_GPM_AMS_072h.png
+Figura salva: diff_MONAN_GSMAP_AMS_072h.png
+Figura salva: diff_MONAN_MSWEP_AMS_072h.png
+Figura salva: diff_MONAN_GPM_ACC_072h.png
+Figura salva: diff_MONAN_GSMAP_ACC_072h.png
+Figura salva: diff_MONAN_MSWEP_ACC_072h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122800/Bias_MONAN_Prec_2025122800_072h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122800/MONAN_Precipitation_24h_acum_2025122800_2026010100_096h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202601010000/GPM_IMERG_Precipitation_24h_accum_202601010000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202601010000/GSMAP_Precipitation_24h_accum_202601010000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202601010000/MSWEP_Precipitation_24h_accum_202601010000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202601010000/GPM_IMERG_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202601010000/GSMAP_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202601010000/MSWEP_Precipitation_24h_accum_202601010000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_096h.png
+Figura salva: diff_MONAN_GSMAP_GLB_096h.png
+Figura salva: diff_MONAN_MSWEP_GLB_096h.png
+Figura salva: diff_MONAN_GPM_AMS_096h.png
+Figura salva: diff_MONAN_GSMAP_AMS_096h.png
+Figura salva: diff_MONAN_MSWEP_AMS_096h.png
+Figura salva: diff_MONAN_GPM_ACC_096h.png
+Figura salva: diff_MONAN_GSMAP_ACC_096h.png
+Figura salva: diff_MONAN_MSWEP_ACC_096h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122800/Bias_MONAN_Prec_2025122800_096h.nc
+============================================================
+Model file: /home2/eduardo.eras/workspace/python/output/MONAN/2025122800/MONAN_Precipitation_24h_acum_2025122800_2026010200_120h.nc
+GPM file: /home2/eduardo.eras/workspace/NetCDFs/GPM_IMERG/202601020000/GPM_IMERG_Precipitation_24h_accum_202601020000.nc
+GSMAP file: /home2/eduardo.eras/workspace/NetCDFs/GSMAP/202601020000/GSMAP_Precipitation_24h_accum_202601020000.nc
+MSWEP file: /home2/eduardo.eras/workspace/NetCDFs/MSWEP/202601020000/MSWEP_Precipitation_24h_accum_202601020000.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GPM_IMERG/202601020000/GPM_IMERG_Precipitation_24h_accum_202601020000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/GSMAP/202601020000/GSMAP_Precipitation_24h_accum_202601020000_MONAN_30km.nc
+Arquivo ja existe: /home2/eduardo.eras/workspace/NetCDFs/Remapped_30km/MSWEP/202601020000/MSWEP_Precipitation_24h_accum_202601020000_MONAN_30km.nc
+Figura salva: diff_MONAN_GPM_GLB_120h.png
+Figura salva: diff_MONAN_GSMAP_GLB_120h.png
+Figura salva: diff_MONAN_MSWEP_GLB_120h.png
+Figura salva: diff_MONAN_GPM_AMS_120h.png
+Figura salva: diff_MONAN_GSMAP_AMS_120h.png
+Figura salva: diff_MONAN_MSWEP_AMS_120h.png
+Figura salva: diff_MONAN_GPM_ACC_120h.png
+Figura salva: diff_MONAN_GSMAP_ACC_120h.png
+Figura salva: diff_MONAN_MSWEP_ACC_120h.png
+Netcdf: /home2/eduardo.eras/workspace/python/output/Bias/2025122800/Bias_MONAN_Prec_2025122800_120h.nc
+
+----------------------------------------------------------------
+MAE analysis
+----------------------------------------------------------------
+
+Montagem de figuras para: 2025122800 120
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+Processando prazo 024h
+Processando prazo 048h
+Processando prazo 072h
+Processando prazo 096h
+Processando prazo 120h
+
+----------------------------------------------------------------
+Skill score analysis
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 1 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr1mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr1mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr1mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr1mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr1mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 2 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr2mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr2mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr2mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr2mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr2mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 5 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr5mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr5mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr5mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr5mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr5mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 10 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr10mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr10mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr10mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr10mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr10mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 20 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr20mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr20mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr20mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr20mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr20mm.nc
+
+----------------------------------------------------------------
+Skill score analysis for threshold: 50 mm
+----------------------------------------------------------------
+
+Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_024h_thr50mm.nc
+Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_048h_thr50mm.nc
+Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_072h_thr50mm.nc
+Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_096h_thr50mm.nc
+Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122800/CONT_MONAN_2025122800_120h_thr50mm.nc
+
+################################################################
 * * * Simulation for date: 2025 12 29 with span: 120 hours * * *
 ################################################################
 
@@ -200,60 +1404,120 @@ Skill score analysis for threshold: 1 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr1mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr1mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr1mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr1mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr1mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 2 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr2mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr2mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr2mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr2mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr2mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 5 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr5mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr5mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr5mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr5mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr5mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 10 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr10mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr10mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr10mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr10mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr10mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 20 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr20mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr20mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr20mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr20mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr20mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 50 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_024h_thr50mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_048h_thr50mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_072h_thr50mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_096h_thr50mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025122900/CONT_MONAN_2025122900_120h_thr50mm.nc
 
 ################################################################
 * * * Simulation for date: 2025 12 30 with span: 120 hours * * *
@@ -441,72 +1705,546 @@ Skill score analysis for threshold: 1 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr1mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr1mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr1mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr1mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr1mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr1mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 2 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr2mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr2mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr2mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr2mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr2mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr2mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 5 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr5mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr5mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr5mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr5mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr5mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr5mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 10 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr10mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr10mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr10mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr10mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr10mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr10mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 20 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr20mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr20mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr20mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr20mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr20mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr20mm.nc
 
 ----------------------------------------------------------------
 Skill score analysis for threshold: 50 mm
 ----------------------------------------------------------------
 
 Processando lead time: 24 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_024h_thr50mm.nc
 Processando lead time: 48 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_048h_thr50mm.nc
 Processando lead time: 72 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_072h_thr50mm.nc
 Processando lead time: 96 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_096h_thr50mm.nc
 Processando lead time: 120 h
+Saving contingency NetCDF: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr50mm.nc
+Saved: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA/2025123000/CONT_MONAN_2025123000_120h_thr50mm.nc
 
-################################################################
-* * *               MONAN Analysis finished.               * * *
-################################################################
+----------------------------------------------------------------
+Computing monthly mean for process: bias
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/Bias
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: bias
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for process: rmse
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/RMSE
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: rmse
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for process: skill
+----------------------------------------------------------------
 
 
-############################################
- ______  _____  _   _  _____  _____  _    _ 
-|  ____||_   _|| \ | ||_   _|/ ____|| |  | |
-| |__     | |  |  \| |  | | | (___  | |__| |
-|  __|    | |  | .   |  | |  \___ \ |  __  |
-| |      _| |_ | |\  | _| |_ ____) || |  | |
-|_|     |_____||_| \_||_____||_____/|_|  |_|
-############################################
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 1 mm
+----------------------------------------------------------------
 
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr1mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 2 mm
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr2mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 5 mm
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr5mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 10 mm
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr10mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 20 mm
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr20mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Computing monthly mean for skill score with threshold: 50 mm
+----------------------------------------------------------------
+
+Dir base: /home2/eduardo.eras/workspace/python/output/precip_24h/CONTINGENCIA
+Output dir: /home2/eduardo.eras/workspace/python/output/5_days_mean
+Processo: skill, limiar: thr50mm
+Processando rodada 2025122500, prazo 24h, data válida 2025122600
+Processando rodada 2025122600, prazo 24h, data válida 2025122700
+Processando rodada 2025122700, prazo 24h, data válida 2025122800
+Processando rodada 2025122800, prazo 24h, data válida 2025122900
+Processando rodada 2025122900, prazo 24h, data válida 2025123000
+Processando rodada 2025123000, prazo 24h, data válida 2025123100
+Ano 2025, mes 12, prazo 24h, total de arquivos: 5
+Processando rodada 2025122500, prazo 48h, data válida 2025122700
+Processando rodada 2025122600, prazo 48h, data válida 2025122800
+Processando rodada 2025122700, prazo 48h, data válida 2025122900
+Processando rodada 2025122800, prazo 48h, data válida 2025123000
+Processando rodada 2025122900, prazo 48h, data válida 2025123100
+Processando rodada 2025123000, prazo 48h, data válida 2026010100
+Ano 2025, mes 12, prazo 48h, total de arquivos: 4
+Processando rodada 2025122500, prazo 72h, data válida 2025122800
+Processando rodada 2025122600, prazo 72h, data válida 2025122900
+Processando rodada 2025122700, prazo 72h, data válida 2025123000
+Processando rodada 2025122800, prazo 72h, data válida 2025123100
+Processando rodada 2025122900, prazo 72h, data válida 2026010100
+Processando rodada 2025123000, prazo 72h, data válida 2026010200
+Ano 2025, mes 12, prazo 72h, total de arquivos: 3
+Processando rodada 2025122500, prazo 96h, data válida 2025122900
+Processando rodada 2025122600, prazo 96h, data válida 2025123000
+Processando rodada 2025122700, prazo 96h, data válida 2025123100
+Processando rodada 2025122800, prazo 96h, data válida 2026010100
+Processando rodada 2025122900, prazo 96h, data válida 2026010200
+Processando rodada 2025123000, prazo 96h, data válida 2026010300
+Ano 2025, mes 12, prazo 96h, total de arquivos: 2
+Processando rodada 2025122500, prazo 120h, data válida 2025123000
+Processando rodada 2025122600, prazo 120h, data válida 2025123100
+Processando rodada 2025122700, prazo 120h, data válida 2026010100
+Processando rodada 2025122800, prazo 120h, data válida 2026010200
+Processando rodada 2025122900, prazo 120h, data válida 2026010300
+Processando rodada 2025123000, prazo 120h, data válida 2026010400
+Ano 2025, mes 12, prazo 120h, total de arquivos: 1
+
+----------------------------------------------------------------
+Mean bias, MAE, RMSE and skill score across all lead times
+----------------------------------------------------------------
+
+Gerando figura para prazo 024 h - GLB
+Gerando figura para prazo 048 h - GLB
+Gerando figura para prazo 072 h - GLB
+Gerando figura para prazo 096 h - GLB
+Gerando figura para prazo 120 h - GLB
+Gerando figura para prazo 024 h - GLB
+Gerando figura para prazo 048 h - GLB
+Gerando figura para prazo 072 h - GLB
+Gerando figura para prazo 096 h - GLB
+Gerando figura para prazo 120 h - GLB
+Gerando figura para prazo 024 h - GLB
+Gerando figura para prazo 048 h - GLB
+Gerando figura para prazo 072 h - GLB
+Gerando figura para prazo 096 h - GLB
+Gerando figura para prazo 120 h - GLB
+Gerando figura para prazo 024 h - AMS
+Gerando figura para prazo 048 h - AMS
+Gerando figura para prazo 072 h - AMS
+Gerando figura para prazo 096 h - AMS
+Gerando figura para prazo 120 h - AMS
+Gerando figura para prazo 024 h - AMS
+Gerando figura para prazo 048 h - AMS
+Gerando figura para prazo 072 h - AMS
+Gerando figura para prazo 096 h - AMS
+Gerando figura para prazo 120 h - AMS
+Gerando figura para prazo 024 h - AMS
+Gerando figura para prazo 048 h - AMS
+Gerando figura para prazo 072 h - AMS
+Gerando figura para prazo 096 h - AMS
+Gerando figura para prazo 120 h - AMS
+Gerando figura para prazo 024 h - ACC
+Gerando figura para prazo 048 h - ACC
+Gerando figura para prazo 072 h - ACC
+Gerando figura para prazo 096 h - ACC
+Gerando figura para prazo 120 h - ACC
+Gerando figura para prazo 024 h - ACC
+Gerando figura para prazo 048 h - ACC
+Gerando figura para prazo 072 h - ACC
+Gerando figura para prazo 096 h - ACC
+Gerando figura para prazo 120 h - ACC
+Gerando figura para prazo 024 h - ACC
+Gerando figura para prazo 048 h - ACC
+Gerando figura para prazo 072 h - ACC
+Gerando figura para prazo 096 h - ACC
+Gerando figura para prazo 120 h - ACC
+
+----------------------------------------------------------------
+Mean skill score across all lead times for different thresholds
+----------------------------------------------------------------
+
+Processando lead time 24h...
+Processando lead time 48h...
+Processando lead time 72h...
+Processando lead time 96h...
+Processando lead time 120h...
+Processando lead time 24h...
+Processando lead time 48h...
+Processando lead time 72h...
+Processando lead time 96h...
+Processando lead time 120h...
+Processando lead time 24h...
+Processando lead time 48h...
+Processando lead time 72h...
+Processando lead time 96h...
+Processando lead time 120h...
+Processando lead time 24h...
+Processando lead time 48h...
+Processando lead time 72h...
+Processando lead time 96h...
+Processando lead time 120h...
+Processando lead time 24h...
+Processando lead time 48h...
+Processando lead time 72h...
+Processando lead time 96h...
+Processando lead time 120h...

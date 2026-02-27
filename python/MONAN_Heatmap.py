@@ -38,6 +38,8 @@
 #
 # Author: Original implementation by Andre Lyra
 
+import argparse
+from pathlib import Path
 import os
 import glob
 import re
@@ -46,13 +48,35 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.ticker as mticker
 
+# ==========================================================
+# ARGUMENTOS
+# ==========================================================
+
+parser = argparse.ArgumentParser(
+    description="Gera figuras de bias medio para um mes especifico.",
+    formatter_class=argparse.RawTextHelpFormatter
+)
+
+parser.add_argument("ANO", type=str)
+parser.add_argument("MES", type=str)
+parser.add_argument('REGION', type=str, choices=["GLB", "AMS", "ACC"], help='Região geográfica para análise (GLB, AMS ou ACC)')
+parser.add_argument('ANALYSIS_NAME', type=str, help='Nome do conjunto de analises (ex: monthly_means, 10_days_means, etc.)')
+parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+
+args = parser.parse_args()
+
+ANO = int(args.ANO)
+MES = int(args.MES)
+REGIAO_ANALISE = args.REGION
+ANALYSIS_NAME = args.ANALYSIS_NAME
+OUTPUT_PATH = Path(args.OUTPUT_PATH)
+
 # Input / Output directories and parameters
 #BASE_SKILL_DIR = "/home2/eduardo.eras/workspace/python/output/Skill/10_days"
-BASE_SKILL_DIR = "/home2/eduardo.eras/workspace/python/output/Skill/30_days"
+BASE_SKILL_DIR = f"{OUTPUT_PATH}/Skill/{ANALYSIS_NAME}"
 BASE_OUT_DIR = BASE_SKILL_DIR + "/Skill_fig_mensal"
 
-PERIODO = "202512"
-REGIAO_ANALISE = "GLB"   # GLB, AMS ou ACC 
+PERIODO = str(ANO) + str(MES)
 
 REFERENCIAS = ["GPM", "GSMAP", "MSWEP"]
 METRICAS_PRINCIPAIS = ["ETS", "CSI", "POD", "F1", "F05"]
@@ -86,13 +110,14 @@ ORDEM_MODELOS = ["MONAN", "BAM", "GFS"]
 arquivos = glob.glob(
     f"{BASE_SKILL_DIR}/Skill_txt_thr*/{PERIODO}/{PERIODO}_aggregated/Skill_*.txt")
 
-#Debug output to verify files being read##########
+#Debug output to verify files being read
 print("Searching in:", BASE_SKILL_DIR)
 print("PERIODO:", PERIODO)
 print("Number of TXT files found:", len(arquivos))
 
-for a in arquivos[:5]:
-    print("  →", a)
+#for a in arquivos[:5]:
+#    print("  →", a)
+
 ##################################################
 
 registros = []
@@ -152,26 +177,11 @@ for arq in arquivos:
 
 df = pd.DataFrame(registros)
 
-#Debug output to verify DataFrame structure
-print("--------------------------------------------")
-print("Unique metrica values:", df.metrica.unique())
-print("Unique threshold_mm values:", df.threshold_mm.unique())
-print("Unique regiao values:", df.regiao.unique())
-print("Unique referencia values:", df.referencia.unique())
-print("--------------------------------------------")
-print("DataFrame shape:", df.shape)
-print("Unique thresholds:", sorted(df.threshold_mm.unique()))
-print("Unique leads:", sorted(df.lead_h.unique()))
-print("Regions found:", df.regiao.unique())
-print("Models found:", df.modelo.unique())
-
 # Skill versus prazo
 for metrica in METRICAS_PRINCIPAIS:
     print(f"\nSkill versus prazo - Processing metric: {metrica}")
     for ref in REFERENCIAS:
-        print(f"    Reference: {ref}")
         for thr in sorted(df.threshold_mm.unique()):
-            print(f"  Threshold: {thr}")
             DIR_21_thr=f"{DIR_21}/Skill_fig_thr{thr}mm/{PERIODO}"
             os.makedirs(DIR_21_thr, exist_ok=True)
             dfp = df[
@@ -181,7 +191,6 @@ for metrica in METRICAS_PRINCIPAIS:
                 (df.referencia == ref)
             ]
 
-            print("dfp size:", len(dfp))
             if dfp.empty:
                 continue
 
@@ -226,7 +235,6 @@ for metrica in METRICAS_PRINCIPAIS:
 for metrica in METRICAS_PRINCIPAIS:
     print(f"\nSkill versus limiar - Processing metric: {metrica}")
     for ref in REFERENCIAS:
-        print(f"    Reference: {ref}")
         for lead in sorted(df.lead_h.unique()):
             dfp = df[
                 (df.metrica == metrica) &
@@ -235,7 +243,6 @@ for metrica in METRICAS_PRINCIPAIS:
                 (df.referencia == ref)
             ]
 
-            print("dfp size:", len(dfp))
             if dfp.empty:
                 continue
 
@@ -301,7 +308,6 @@ for metrica in METRICAS_PRINCIPAIS:
     vmin = 0.0
 
     for ref in REFERENCIAS:
-        print(f"    Reference: {ref}")
         dfm = dfm_all[dfm_all.referencia == ref]
 
         if dfm.empty:
@@ -373,7 +379,6 @@ for metrica in METRICAS_PRINCIPAIS:
             (df.regiao == REGIAO_ANALISE)
         ]
 
-        print("dfp size:", len(dfp))
         if dfp.empty:
             continue
 
@@ -381,7 +386,6 @@ for metrica in METRICAS_PRINCIPAIS:
 
         for modelo in dfp.modelo.unique():
             for ref in REFERENCIAS:
-                print(f"    Reference: {ref}")
                 d = dfp[
                     (dfp.modelo == modelo) &
                     (dfp.referencia == ref)

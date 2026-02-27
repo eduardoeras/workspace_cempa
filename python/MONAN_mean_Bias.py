@@ -8,6 +8,8 @@
 # Medias geradas com CDO no diretorio /lustre/projetos/monan_gam/andre.lyra/NetCDFs/precip_24h/Bias/
 # a partir do script Gera_monthly_mean_Bias.sh
 
+import argparse
+from pathlib import Path
 import os
 import xarray as xr
 import matplotlib.pyplot as plt
@@ -16,18 +18,37 @@ import cartopy.feature as cfeature
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 
 # ==========================================================
-# PARAMETROS
+# ARGUMENTOS
 # ==========================================================
 
-ANO  = 2025
-MES  = 12
+parser = argparse.ArgumentParser(
+    description="Gera figuras de bias medio para um mes especifico.",
+    formatter_class=argparse.RawTextHelpFormatter
+)
+
+parser.add_argument("ANO", type=str)
+parser.add_argument("MES", type=str)
+parser.add_argument('DOMINIO_ATIVO', type=str, choices=["GLB", "AMS", "ACC"], help='Dominio geografico para as figuras (GLB, AMS ou ACC)')
+parser.add_argument('ANALYSIS_NAME', type=str, help='Nome do conjunto de analises (ex: monthly_means, 10_days_means, etc.)')
+parser.add_argument('NETCDF_PATH', type=str, help='Caminho base para os arquivos de comparação (NetCDF)')
+parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+
+args = parser.parse_args()
+
+ANO = int(args.ANO)
+MES = int(args.MES)
+DOMINIO_ATIVO = args.DOMINIO_ATIVO
+ANALYSIS_NAME = args.ANALYSIS_NAME
+NETCDF_PATH = Path(args.NETCDF_PATH)
+OUTPUT_PATH = Path(args.OUTPUT_PATH)
+
+# ==========================================================
+# PARAMETROS
+# ==========================================================
 
 PRAZO_INICIAL = 24
 PRAZO_FINAL   = 120
 PASSO_PRAZO   = 24
-
-# Chooses geographic region
-DOMINIO_ATIVO = "ACC"    # GLB, AMS ou ACC
 
 # Color scale settings.
 VMIN = -10
@@ -69,17 +90,14 @@ FIG_PARAMS = {
     }
 }
 
-# Directory where input NetCDF files are located
-DIR_NETCDF = (
-    #"/home2/eduardo.eras/workspace/python/output/monthly_means"
-    "/home2/eduardo.eras/workspace/python/output/10_days_means"
-)
-
-# Directory for saving output figures
-DIR_SAIDA = (
-    #"/home2/eduardo.eras/workspace/python/output/monthly_means"
-    "/home2/eduardo.eras/workspace/python/output/10_days_means"
-)
+#Debug attributes
+#print(f"Using input NetCDF directory: {NETCDF_PATH}")
+#print(f"Output figures will be saved to: {OUTPUT_PATH}")
+#print(f"Processing data for {ANO}-{MES:02d} | Domain: {DOMINIO_ATIVO}")
+#print(f"Analysis type: {ANALYSIS_NAME}")
+#print(f"ds_gfs: {NETCDF_PATH}/Bias/Bias_GFS_Prec_{ANO}{MES:02d}_mean_LEADh.nc")
+#print(f"ds_bam: {NETCDF_PATH}/Bias/Bias_BAM_Prec_{ANO}{MES:02d}_mean_LEADh.nc")
+#print(f"ds_monan: {OUTPUT_PATH}/{ANALYSIS_NAME}/Bias_MONAN_Prec_{ANO}{MES:02d}_mean_LEADh.nc\n")
 
 # ==========================================================
 # FUNCOES
@@ -88,15 +106,15 @@ DIR_SAIDA = (
 def plot_bias_mensal(ano, mes, lead):
 
     ds_gfs = xr.open_dataset(
-        f"{DIR_NETCDF}/Bias_GFS_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
+        f"{NETCDF_PATH}/Bias/Bias_GFS_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
     )
 
     ds_bam = xr.open_dataset(
-        f"{DIR_NETCDF}/Bias_BAM_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
+        f"{NETCDF_PATH}/Bias/Bias_BAM_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
     )
 
     ds_monan = xr.open_dataset(
-        f"{DIR_NETCDF}/Bias_MONAN_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
+        f"{OUTPUT_PATH}/{ANALYSIS_NAME}/Bias_MONAN_Prec_{ano}{mes:02d}_mean_{lead:03d}h.nc"
     )
 
     models = [
@@ -220,7 +238,7 @@ def plot_bias_mensal(ano, mes, lead):
 #    plt.subplots_adjust(top=0.92, bottom=0.06)
 
     nome_fig = f"BIAS_{ano}{mes:02d}_{DOMINIO_ATIVO}_p{lead:03d}h.png"
-    fig_dir = f"{DIR_SAIDA}/{ano}{mes:02d}/{ano}{mes:02d}_mean"
+    fig_dir = f"{OUTPUT_PATH}/{ANALYSIS_NAME}/{ano}{mes:02d}/{ano}{mes:02d}_mean"
     os.makedirs(fig_dir, exist_ok=True)
     plt.savefig(
         os.path.join(fig_dir, nome_fig),

@@ -47,12 +47,14 @@ parser.add_argument('PRAZO_H', type=int, help='Prazo total da previsao em horas 
 # Argumentos dos caminhos de entrada e saída
 parser.add_argument('MONAN_PATH', type=str, help='Caminho base para os arquivos de entrada (NetCDF)')
 parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+parser.add_argument('GENERATE_FIGURES', type=bool, help='Gerar figuras? (True/False)')
 
 args = parser.parse_args()
 
 # Processamento dos caminhos de entrada e saída
 MONAN_PATH = Path(args.MONAN_PATH)
 OUTPUT_PATH = Path(args.OUTPUT_PATH) / "MONAN"
+GENERATE_FIGURES = args.GENERATE_FIGURES
 
 
 data_inicio_base = datetime.datetime(
@@ -137,7 +139,7 @@ for i in range(num_dias):
 # Diferenca (chuva acumulada entre os dois tempos)
     prec_acum = ((vare - vari) ).squeeze()
 
-# Calculando o M�ximo Global
+# Calculando o Máximo Global
     prec_max = np.nanmax(prec_acum)
     mask_lat_AMS = (lat >= -55) & (lat <= 20)
     mask_lon_AMS = (lon >= 275) & (lon <= 340)
@@ -146,7 +148,7 @@ for i in range(num_dias):
     mask_lon_ACC = (lon >= 242) & (lon <= 325)
     prec_max_ACC = np.nanmax(prec_acum[np.ix_(mask_lat_ACC, mask_lon_ACC)])
    
-# Calculando a M�dia Global
+# Calculando a Média Global
     weights = np.cos(np.deg2rad(lat))    
     w2d = weights[:, None]                 
     mask = np.isfinite(prec_acum)
@@ -168,7 +170,7 @@ for i in range(num_dias):
     den = np.nansum(weights * np.isfinite(prec_sub))
     prec_media_ACC = num / den   
  
-# Formatar os valores para inclus�o no t�tulo
+# Formatar os valores para inclusão no título
     max_str = f"Max: {prec_max:.2f} mm"
     media_str = f"Mean: {prec_media:.2f} mm"
     max_str_AMS = f"Max: {prec_max_AMS:.2f} mm"
@@ -259,7 +261,7 @@ for i in range(num_dias):
     plt.close(fig)
 
 ##########################
-# Plotagem Am�rica do Sul
+# Plotagem América do Sul
     fig = plt.figure(figsize=(10,5))
     ax = plt.axes(projection=ccrs.PlateCarree())
     ax.set_extent([-85, -20, -55, 20], crs=ccrs.PlateCarree())
@@ -340,7 +342,7 @@ for i in range(num_dias):
 
 
 ##########################
-# Plotagem Am�rica Central e Caribe
+# Plotagem América Central e Caribe
     fig = plt.figure(figsize=(10,5))
     ax = plt.axes(projection=ccrs.PlateCarree())
     ax.set_extent([-118, -35, -10, 35], crs=ccrs.PlateCarree())

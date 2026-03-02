@@ -252,3 +252,36 @@ February 13, 2026
 
     To Do:
         Plot Taylor and YSU on different directories to proper compare them. Currently, I'm using MYNN.
+
+February 20, 2026
+    /h2mnt/home/eduardo.eras/workspace/python/output/monthly_means/202512/202512_mean/202512/202512_mean/BIAS_202512_GLB_p024h.png
+         /home2/eduardo.eras/workspace/python/output/monthly_means/202512/202512_mean
+
+    Still missing something....
+    Perhaps "MONAN_nc_24h_acum_newcolorbar" or "Skill_score_MONAN_x_GPM_x_GSMAP_x_MSWEP"?
+
+February 23, 2026
+
+    Threshold: 1.0 2.0 5.0 10.0 20.0 50.0
+
+    To Do:
+    Fix output path concatenation. [OK]
+
+February 24, 2026
+
+    To Do:
+    Run the full current analysis.
+
+February 26, 2026
+
+    To Do:
+    MONAN_mean_Skill.py
+    
+February 27, 2026
+    To Do:  
+    Change "GENERATE_FIGURES" to "GENERATE_MAPS" [OK]
+    Find where the graphs are generated, perhaps in the "not used" function of the original scripts? [OK]
+
+March 2, 2026
+
+    /p/projetos/monan_atm/eduardo.eras/output/30_days

@@ -25,3 +25,5 @@ __pycache__/
 .env.production.local
 NetCDFs/
 output/
+listas_medias/
+old/

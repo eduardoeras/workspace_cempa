@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Script para gerar MAE (Mean absolute Error) do MONAN em rela��o a GPM, GSMAP e MSWEP
-# Tambem escreve um netcdf com o erro absoluto e o quadrado da diferen�a para futuro calculo do RMSE
+# Script para gerar MAE (Mean absolute Error) do MONAN em relação a GPM, GSMAP e MSWEP
+# Tambem escreve um netcdf com o erro absoluto e o quadrado da diferenêa para futuro calculo do RMSE
 # Autor: Andre Lyra
 #
 # Uso: (Necessario ambiente python e cdo)
@@ -52,12 +52,16 @@ parser.add_argument("PRAZO_H", type=int)
 # Argumentos dos caminhos de entrada e saída
 parser.add_argument('NETCDF_PATH', type=str, help='Caminho base para os arquivos de entrada (NetCDF)')
 parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+parser.add_argument('GENERATE_MAPS', type=int, help='Gerar mapas? (1 para True, 0 para False)')
 
 args = parser.parse_args()
 
 # Processamento dos caminhos de entrada e saída
 NETCDF_PATH = Path(args.NETCDF_PATH)
 OUTPUT_PATH = Path(args.OUTPUT_PATH)
+
+# Processamento do argumento para gerar mapas
+GENERATE_MAPS = args.GENERATE_MAPS
 
 data_ini = datetime.datetime(
     int(args.ANO),
@@ -149,6 +153,8 @@ def plot_rmse(data, titulo, nome_fig, extent=None):
 # Loop de previsao
 for lead in lead_times:
 
+    print(f"Processando lead time: {lead} horas")
+
     data_fim = data_ini + datetime.timedelta(hours=lead)
 
     ciclo_str = data_ini.strftime("%Y%m%d%H")
@@ -237,96 +243,97 @@ for lead in lead_times:
     abs_err_gsmap = np.abs(diff_gsmap)
     abs_err_mswep = np.abs(diff_mswep)
 
-# Diretorio de saida das figuras
-    fig_dir = f"{OUTPUT_PATH}/MAE/{args.ANO}{args.MES}/{ciclo_str}/"
-    os.makedirs(fig_dir, exist_ok=True)
+    if GENERATE_MAPS:
+    # Diretorio de saida das figuras
+        fig_dir = f"{OUTPUT_PATH}/MAE/{args.ANO}{args.MES}/{ciclo_str}/"
+        os.makedirs(fig_dir, exist_ok=True)
 
-# ===============================
-# Funcao de plot Global
-# ===============================
-    corr_gpm = correlacao_espacial(monan, gpm)
-    corr_gsmap = correlacao_espacial(monan, gsmap)
-    corr_mswep = correlacao_espacial(monan, mswep)
+    # ===============================
+    # Funcao de plot Global
+    # ===============================
+        corr_gpm = correlacao_espacial(monan, gpm)
+        corr_gsmap = correlacao_espacial(monan, gsmap)
+        corr_mswep = correlacao_espacial(monan, mswep)
 
-    rmse_med_gpm = rmse_medio(diff_gpm)
-    rmse_med_gsmap = rmse_medio(diff_gsmap)
-    rmse_med_mswep = rmse_medio(diff_mswep)
+        rmse_med_gpm = rmse_medio(diff_gpm)
+        rmse_med_gsmap = rmse_medio(diff_gsmap)
+        rmse_med_mswep = rmse_medio(diff_mswep)
 
-    plot_rmse(
-        abs_err_gpm,
-        f"MAE {lead:03d}h MONAN vs GPM IMERG\nGlobal - Corr={corr_gpm:.2f} RMSE={rmse_med_gpm:.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GPM_GLB_{lead:03d}h.png")
-    )
+        plot_rmse(
+            abs_err_gpm,
+            f"MAE {lead:03d}h MONAN vs GPM IMERG\nGlobal - Corr={corr_gpm:.2f} RMSE={rmse_med_gpm:.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GPM_GLB_{lead:03d}h.png")
+        )
 
-    plot_rmse(
-        abs_err_gsmap,
-        f"MAE {lead:03d}h MONAN vs GSMAP\nGlobal - Corr={corr_gsmap:.2f} RMSE={rmse_med_gsmap:.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GSMAP_GLB_{lead:03d}h.png")
-    )
+        plot_rmse(
+            abs_err_gsmap,
+            f"MAE {lead:03d}h MONAN vs GSMAP\nGlobal - Corr={corr_gsmap:.2f} RMSE={rmse_med_gsmap:.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GSMAP_GLB_{lead:03d}h.png")
+        )
 
-    plot_rmse(
-        abs_err_mswep,
-        f"MAE {lead:03d}h MONAN vs MSWEP\nGlobal - Corr={corr_mswep:.2f} RMSE={rmse_med_mswep:.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_MSWEP_GLB_{lead:03d}h.png")
-    )
+        plot_rmse(
+            abs_err_mswep,
+            f"MAE {lead:03d}h MONAN vs MSWEP\nGlobal - Corr={corr_mswep:.2f} RMSE={rmse_med_mswep:.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_MSWEP_GLB_{lead:03d}h.png")
+        )
 
-# ===============================
-# Funcao de plot AMS
-# ==============================
-    sl_AMS = dict(lat=slice(-55, 20), lon=slice(275, 340))
+    # ===============================
+    # Funcao de plot AMS
+    # ==============================
+        sl_AMS = dict(lat=slice(-55, 20), lon=slice(275, 340))
 
-    plot_rmse(
-        abs_err_gpm.sel(**sl_AMS),
-        f"MAE {lead:03d}h MONAN vs GPM IMERG\nAMS - Corr={correlacao_espacial(monan.sel(**sl_AMS), gpm.sel(**sl_AMS)):.2f} "
-        f"RMSE={rmse_medio(diff_gpm.sel(**sl_AMS)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GPM_AMS_{lead:03d}h.png"),
-        extent=[-85, -20, -55, 20]
-    )
+        plot_rmse(
+            abs_err_gpm.sel(**sl_AMS),
+            f"MAE {lead:03d}h MONAN vs GPM IMERG\nAMS - Corr={correlacao_espacial(monan.sel(**sl_AMS), gpm.sel(**sl_AMS)):.2f} "
+            f"RMSE={rmse_medio(diff_gpm.sel(**sl_AMS)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GPM_AMS_{lead:03d}h.png"),
+            extent=[-85, -20, -55, 20]
+        )
 
-    plot_rmse(
-        abs_err_gsmap.sel(**sl_AMS),
-        f"MAE {lead:03d}h MONAN vs GSMAP\nAMS = Corr={correlacao_espacial(monan.sel(**sl_AMS), gsmap.sel(**sl_AMS)):.2f} "
-        f"RMSE={rmse_medio(diff_gsmap.sel(**sl_AMS)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GSMAP_AMS_{lead:03d}h.png"),
-        extent=[-85, -20, -55, 20]
-    )
+        plot_rmse(
+            abs_err_gsmap.sel(**sl_AMS),
+            f"MAE {lead:03d}h MONAN vs GSMAP\nAMS = Corr={correlacao_espacial(monan.sel(**sl_AMS), gsmap.sel(**sl_AMS)):.2f} "
+            f"RMSE={rmse_medio(diff_gsmap.sel(**sl_AMS)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GSMAP_AMS_{lead:03d}h.png"),
+            extent=[-85, -20, -55, 20]
+        )
 
-    plot_rmse(
-        abs_err_mswep.sel(**sl_AMS),
-        f"MAE {lead:03d}h MONAN vs MSWEP\nAMS - Corr={correlacao_espacial(monan.sel(**sl_AMS), mswep.sel(**sl_AMS)):.2f} "
-        f"RMSE={rmse_medio(diff_mswep.sel(**sl_AMS)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_MSWEP_AMS_{lead:03d}h.png"),
-        extent=[-85, -20, -55, 20]
-    )
+        plot_rmse(
+            abs_err_mswep.sel(**sl_AMS),
+            f"MAE {lead:03d}h MONAN vs MSWEP\nAMS - Corr={correlacao_espacial(monan.sel(**sl_AMS), mswep.sel(**sl_AMS)):.2f} "
+            f"RMSE={rmse_medio(diff_mswep.sel(**sl_AMS)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_MSWEP_AMS_{lead:03d}h.png"),
+            extent=[-85, -20, -55, 20]
+        )
 
-# ===============================
-# Funcao de plot ACC
-# ==============================
-    sl_ACC = dict(lat=slice(-10, 35), lon=slice(242, 335))
+    # ===============================
+    # Funcao de plot ACC
+    # ==============================
+        sl_ACC = dict(lat=slice(-10, 35), lon=slice(242, 335))
 
-    plot_rmse(
-        abs_err_gpm.sel(**sl_ACC),
-        f"MAE {lead:03d}h MONAN vs GPM IMERG\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), gpm.sel(**sl_ACC)):.2f} "
-        f"RMSE={rmse_medio(diff_gpm.sel(**sl_ACC)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GPM_ACC_{lead:03d}h.png"),
-        extent=[-118, -35, -10, 35]
-    )
+        plot_rmse(
+            abs_err_gpm.sel(**sl_ACC),
+            f"MAE {lead:03d}h MONAN vs GPM IMERG\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), gpm.sel(**sl_ACC)):.2f} "
+            f"RMSE={rmse_medio(diff_gpm.sel(**sl_ACC)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GPM_ACC_{lead:03d}h.png"),
+            extent=[-118, -35, -10, 35]
+        )
 
-    plot_rmse(
-        abs_err_gsmap.sel(**sl_ACC),
-        f"MAE {lead:03d}h MONAN vs GSMAP\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), gsmap.sel(**sl_ACC)):.2f} "
-        f"RMSE={rmse_medio(diff_gsmap.sel(**sl_ACC)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_GSMAP_ACC_{lead:03d}h.png"),
-        extent=[-118, -35, -10, 35]
-    )
+        plot_rmse(
+            abs_err_gsmap.sel(**sl_ACC),
+            f"MAE {lead:03d}h MONAN vs GSMAP\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), gsmap.sel(**sl_ACC)):.2f} "
+            f"RMSE={rmse_medio(diff_gsmap.sel(**sl_ACC)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_GSMAP_ACC_{lead:03d}h.png"),
+            extent=[-118, -35, -10, 35]
+        )
 
-    plot_rmse(
-        abs_err_mswep.sel(**sl_ACC),
-        f"MAE {lead:03d}h MONAN vs MSWEP\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), mswep.sel(**sl_ACC)):.2f} "
-        f"RMSE={rmse_medio(diff_mswep.sel(**sl_ACC)):.2f} mm",
-        os.path.join(fig_dir, f"MAE_MONAN_MSWEP_ACC_{lead:03d}h.png"),
-        extent=[-118, -35, -10, 35]
-    )
+        plot_rmse(
+            abs_err_mswep.sel(**sl_ACC),
+            f"MAE {lead:03d}h MONAN vs MSWEP\nACC - Corr={correlacao_espacial(monan.sel(**sl_ACC), mswep.sel(**sl_ACC)):.2f} "
+            f"RMSE={rmse_medio(diff_mswep.sel(**sl_ACC)):.2f} mm",
+            os.path.join(fig_dir, f"MAE_MONAN_MSWEP_ACC_{lead:03d}h.png"),
+            extent=[-118, -35, -10, 35]
+        )
 
 
 # Salvando o arquivo NetCDF
@@ -358,8 +365,9 @@ for lead in lead_times:
     )
 
 
-# Roda o script para recortar e juntar as figuras
-subprocess.run(
-    ["bash", "MONAN_Mae.sh", f"{data_ini_str}", f"{prazo_total}", f"{OUTPUT_PATH}"],
-    check=True
+if GENERATE_MAPS:
+    # Roda o script para recortar e juntar as figuras
+    subprocess.run(
+        ["bash", "MONAN_Mae.sh", f"{data_ini_str}", f"{prazo_total}", f"{OUTPUT_PATH}"],
+        check=True
 )

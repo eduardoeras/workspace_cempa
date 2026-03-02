@@ -24,7 +24,6 @@ from matplotlib import cm
 from matplotlib.colors import ListedColormap, BoundaryNorm 
 from pathlib import Path
 
-
 #OUTPUT_PATH = "/home2/eduardo.eras/workspace/python/output/MONAN/"
 #MONAN_PATH = "/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/"
 #MONAN_PATH = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/flushout/"
@@ -47,14 +46,18 @@ parser.add_argument('PRAZO_H', type=int, help='Prazo total da previsao em horas 
 # Argumentos dos caminhos de entrada e saída
 parser.add_argument('MONAN_PATH', type=str, help='Caminho base para os arquivos de entrada (NetCDF)')
 parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
-parser.add_argument('GENERATE_FIGURES', type=bool, help='Gerar figuras? (True/False)')
+parser.add_argument('PREFIXO_ARQ', type=str, help='Prefixo para os arquivos de entrada do MONAN (Ex: MONAN_DIAG_G_POS_GFS_)')
+parser.add_argument('SUFIXO_ARQ', type=str, help='Sufixo para os arquivos de entrada do MONAN (Ex: .00.00.x655362L55.nc)')
+parser.add_argument('GENERATE_MAPS', type=int, help='Gerar mapas? (1 para True, 0 para False)')
 
 args = parser.parse_args()
 
 # Processamento dos caminhos de entrada e saída
 MONAN_PATH = Path(args.MONAN_PATH)
 OUTPUT_PATH = Path(args.OUTPUT_PATH) / "MONAN"
-GENERATE_FIGURES = args.GENERATE_FIGURES
+PREFIXO_ARQ = args.PREFIXO_ARQ
+SUFIXO_ARQ = args.SUFIXO_ARQ
+GENERATE_MAPS = args.GENERATE_MAPS
 
 
 data_inicio_base = datetime.datetime(
@@ -89,12 +92,8 @@ for i in range(num_dias):
     data_str_e = data_final_acumulo.strftime(formato_data)
     
 # Montando nome dos arquivos
-#   CAMINHO_BASE = "/lustre/projetos/monan_adm/monan/ecf_PREOPER/MONAN-WorkFlow-OPER/MONAN_PRE_OPER/MONAN/scripts_CD-CT/dataout/"
     CAMINHO_BASE = MONAN_PATH
     DIR_DATA = f"{data_inicial}/Post/"
-    PREFIXO_ARQ  = "MONAN_DIAG_G_POS_GFS_"
-    SUFIXO_ARQ   = ".00.00.x655362L55.nc"
-    #SUFIXO_ARQ   = ".00.00.x5898242L55.nc" 
     nome_arquivo_i = f"{PREFIXO_ARQ}{data_inicial}_{data_str_i}{SUFIXO_ARQ}"
     nome_arquivo_e = f"{PREFIXO_ARQ}{data_inicial}_{data_str_e}{SUFIXO_ARQ}"
     
@@ -116,8 +115,6 @@ for i in range(num_dias):
 # Caminho dos arquivos (MONAN)
     arquivoi = caminho_completo_i
     arquivoe = caminho_completo_e
-#    print(arquivoi)
-#    print(arquivoe)
 
 # Inicializa variaveis de referencia
     precip_soma = None
@@ -133,8 +130,6 @@ for i in range(num_dias):
 # Coordenadas geograficas (em graus)
     lat = (fi["latitude"].values)
     lon = (fi["longitude"].values)
-
-#    print("Dimensoes de vari e vare:", vari.shape)
 
 # Diferenca (chuva acumulada entre os dois tempos)
     prec_acum = ((vare - vari) ).squeeze()
@@ -177,249 +172,248 @@ for i in range(num_dias):
     media_str_AMS = f"Mean: {prec_media_AMS:.2f} mm"
     max_str_ACC = f"Max: {prec_max_ACC:.2f} mm"
     media_str_ACC = f"Mean: {prec_media_ACC:.2f} mm" 
-       
-#    print("Shapes:", lon.shape, lat.shape, prec_acum.shape)
 
-# Lista de Cores 
-    cores_legenda_rgb = [
-    (255, 255, 255),  # Branco
-    (220, 220, 220),  # Cinza Claro
-    (180, 180, 180),  # Cinza
-    (20, 0, 150),     # Azul Marinho/Roxo
-    (0, 0, 255),      # Azul
-    (0, 100, 100),    # Verde Escuro/Azul Petr�leo
-    (0, 200, 0),      # Verde
-    (150, 255, 0),    # Verde Lim�o/Ciano
-    (255, 255, 0),    # Amarelo Claro
-    (255, 220, 0),    # Amarelo Escuro/Ouro
-    (255, 130, 0),    # Laranja
-    (230, 25, 25),    # Vermelho Claro
-    (100, 0, 0),      # Vermelho Escuro/Borgonha
-    ]
+    if GENERATE_MAPS:
+    # Lista de Cores 
+        cores_legenda_rgb = [
+        (255, 255, 255),  # Branco
+        (220, 220, 220),  # Cinza Claro
+        (180, 180, 180),  # Cinza
+        (20, 0, 150),     # Azul Marinho/Roxo
+        (0, 0, 255),      # Azul
+        (0, 100, 100),    # Verde Escuro/Azul Petr�leo
+        (0, 200, 0),      # Verde
+        (150, 255, 0),    # Verde Lim�o/Ciano
+        (255, 255, 0),    # Amarelo Claro
+        (255, 220, 0),    # Amarelo Escuro/Ouro
+        (255, 130, 0),    # Laranja
+        (230, 25, 25),    # Vermelho Claro
+        (100, 0, 0),      # Vermelho Escuro/Borgonha
+        ]
 
-    cores_normalizadas_matplotlib = []
-    for r, g, b in cores_legenda_rgb:
-        cores_normalizadas_matplotlib.append((r / 255.0, g / 255.0, b / 255.0))
+        cores_normalizadas_matplotlib = []
+        for r, g, b in cores_legenda_rgb:
+            cores_normalizadas_matplotlib.append((r / 255.0, g / 255.0, b / 255.0))
 
-# Criacao da colormap e os niveis (clevs)
-    cmap = ListedColormap(cores_normalizadas_matplotlib)
-    clevs = [0, 1, 2, 4, 6, 10, 15, 25, 35, 50, 75, 100, 150]
-    clevs_full = clevs + [40]
-    norm = BoundaryNorm(clevs, ncolors=len(clevs), extend='max')
+    # Criacao da colormap e os niveis (clevs)
+        cmap = ListedColormap(cores_normalizadas_matplotlib)
+        clevs = [0, 1, 2, 4, 6, 10, 15, 25, 35, 50, 75, 100, 150]
+        clevs_full = clevs + [40]
+        norm = BoundaryNorm(clevs, ncolors=len(clevs), extend='max')
 
-# Projecao Cartopy
-    proj = ccrs.PlateCarree()
-    lon2d, lat2d = np.meshgrid(lon, lat)
+    # Projecao Cartopy
+        proj = ccrs.PlateCarree()
+        lon2d, lat2d = np.meshgrid(lon, lat)
 
 
-##########################
-# Plotagem Global
-    fig = plt.figure(figsize=(10,5))
-    ax = plt.axes(projection=ccrs.PlateCarree())
-    ax.set_extent([-180, 180, -90, 90], crs=ccrs.PlateCarree())
+    ##########################
+    # Plotagem Global
+        fig = plt.figure(figsize=(10,5))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        ax.set_extent([-180, 180, -90, 90], crs=ccrs.PlateCarree())
 
-    plt_triang = ax.pcolormesh(
-    lon2d, lat2d, prec_acum,
-    cmap=cmap,
-    norm=norm,
-    shading='auto',
-    transform=proj
-    )
+        plt_triang = ax.pcolormesh(
+        lon2d, lat2d, prec_acum,
+        cmap=cmap,
+        norm=norm,
+        shading='auto',
+        transform=proj
+        )
 
-# Contornos de continentes e linhas costeiras
-    ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
-    ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
-    ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
+    # Contornos de continentes e linhas costeiras
+        ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
+        ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
+        ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
 
-# Linhas de grade
-    gl = ax.gridlines(draw_labels=True, linewidth=0.3, color='gray', alpha=0.5, linestyle='--')
-    gl.top_labels = False
-    gl.right_labels = False
-    gl.bottom_labels = True
-    gl.left_labels = True
-    gl.xlines = False
-    gl.ylines = False
-    gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 60))
-    gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 30))
+    # Linhas de grade
+        gl = ax.gridlines(draw_labels=True, linewidth=0.3, color='gray', alpha=0.5, linestyle='--')
+        gl.top_labels = False
+        gl.right_labels = False
+        gl.bottom_labels = True
+        gl.left_labels = True
+        gl.xlines = False
+        gl.ylines = False
+        gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 60))
+        gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 30))
 
-# Barra de cores
-    cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
-    cbar.set_label('(mm/day)')
-    cbar.set_ticks(clevs)
+    # Barra de cores
+        cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
+        cbar.set_label('(mm/day)')
+        cbar.set_ticks(clevs)
 
-# Titulo
-    plt.title(
-    f'MONAN {data_inicial}+{data_str_e} - 24h prec accum for {Fct}h \n' 
-    f'Global - {max_str} | {media_str}', 
-    fontsize=12
-    )
-# Salvar figura
-    nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_GLB.png"
-    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
-    os.makedirs(caminho_out, exist_ok=True)
-    plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    # Titulo
+        plt.title(
+        f'MONAN {data_inicial}+{data_str_e} - 24h prec accum for {Fct}h \n' 
+        f'Global - {max_str} | {media_str}', 
+        fontsize=12
+        )
+    # Salvar figura
+        nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_GLB.png"
+        caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
+        os.makedirs(caminho_out, exist_ok=True)
+        plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
+        plt.close(fig)
 
-##########################
-# Plotagem América do Sul
-    fig = plt.figure(figsize=(10,5))
-    ax = plt.axes(projection=ccrs.PlateCarree())
-    ax.set_extent([-85, -20, -55, 20], crs=ccrs.PlateCarree())
-    xticks = np.arange(-80, -19, 10)
-    yticks = np.arange(-50, 21, 10)
-    ax.set_xticks(xticks, crs=ccrs.PlateCarree())
-    ax.set_yticks(yticks, crs=ccrs.PlateCarree())
-    ax.xaxis.set_major_formatter(LongitudeFormatter(number_format='.0f'))
-    ax.yaxis.set_major_formatter(LatitudeFormatter(number_format='.0f'))
-    
-    ax.tick_params(
-    axis='both',
-    which='major',
-    direction='in',
-    length=2,
-    width=0.6,
-    labelsize=8,
-    top=True,
-    right=True
-    )
+    ##########################
+    # Plotagem América do Sul
+        fig = plt.figure(figsize=(10,5))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        ax.set_extent([-85, -20, -55, 20], crs=ccrs.PlateCarree())
+        xticks = np.arange(-80, -19, 10)
+        yticks = np.arange(-50, 21, 10)
+        ax.set_xticks(xticks, crs=ccrs.PlateCarree())
+        ax.set_yticks(yticks, crs=ccrs.PlateCarree())
+        ax.xaxis.set_major_formatter(LongitudeFormatter(number_format='.0f'))
+        ax.yaxis.set_major_formatter(LatitudeFormatter(number_format='.0f'))
         
-    plt_triang = ax.pcolormesh(
-    lon2d, lat2d, prec_acum,
-    cmap=cmap,
-    norm=norm,
-    shading='auto',
-    transform=proj
-    )
+        ax.tick_params(
+        axis='both',
+        which='major',
+        direction='in',
+        length=2,
+        width=0.6,
+        labelsize=8,
+        top=True,
+        right=True
+        )
+            
+        plt_triang = ax.pcolormesh(
+        lon2d, lat2d, prec_acum,
+        cmap=cmap,
+        norm=norm,
+        shading='auto',
+        transform=proj
+        )
 
-# Contornos de continentes e linhas costeiras
-    ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
-    ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
-    ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
-    estados = cfeature.NaturalEarthFeature(
-    category='cultural',
-    name='admin_1_states_provinces_lines',
-    scale='50m',
-    facecolor='none'
-    )
-    ax.add_feature(estados, edgecolor='black', linewidth=0.4)
+    # Contornos de continentes e linhas costeiras
+        ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
+        ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
+        ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
+        estados = cfeature.NaturalEarthFeature(
+        category='cultural',
+        name='admin_1_states_provinces_lines',
+        scale='50m',
+        facecolor='none'
+        )
+        ax.add_feature(estados, edgecolor='black', linewidth=0.4)
 
-# Linhas de grade
-    gl = ax.gridlines(
-    draw_labels=True,
-    linewidth=0.3,
-    color='gray',
-    alpha=0.5,
-    linestyle='--'
-    )
+    # Linhas de grade
+        gl = ax.gridlines(
+        draw_labels=True,
+        linewidth=0.3,
+        color='gray',
+        alpha=0.5,
+        linestyle='--'
+        )
 
-    gl.top_labels = False
-    gl.right_labels = False
-    gl.bottom_labels = False
-    gl.left_labels = False
-    gl.xlines = False
-    gl.ylines = False
-    gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 10))
-    gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 10))
-    gl.xlabel_style = {'size': 9}
-    gl.ylabel_style = {'size': 9}
+        gl.top_labels = False
+        gl.right_labels = False
+        gl.bottom_labels = False
+        gl.left_labels = False
+        gl.xlines = False
+        gl.ylines = False
+        gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 10))
+        gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 10))
+        gl.xlabel_style = {'size': 9}
+        gl.ylabel_style = {'size': 9}
 
-# Barra de cores
-    cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
-    cbar.set_label('(mm/day)')
-    cbar.set_ticks(clevs)
+    # Barra de cores
+        cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
+        cbar.set_label('(mm/day)')
+        cbar.set_ticks(clevs)
 
-# Titulo
-    plt.title(
-    f'MONAN {data_inicial}+{data_str_e} - prec24h {Fct}h\n' 
-    f'AMS - {max_str_AMS} | {media_str_AMS}', 
-    fontsize=12
-    )
-# Salvar figura
-    nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_AMS.png"
-    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
-    plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    # Titulo
+        plt.title(
+        f'MONAN {data_inicial}+{data_str_e} - prec24h {Fct}h\n' 
+        f'AMS - {max_str_AMS} | {media_str_AMS}', 
+        fontsize=12
+        )
+    # Salvar figura
+        nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_AMS.png"
+        caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
+        plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
+        plt.close(fig)
 
 
-##########################
-# Plotagem América Central e Caribe
-    fig = plt.figure(figsize=(10,5))
-    ax = plt.axes(projection=ccrs.PlateCarree())
-    ax.set_extent([-118, -35, -10, 35], crs=ccrs.PlateCarree())
-    xticks = np.arange(-110, -35, 10)
-    yticks = np.arange(-10, 36, 10)
-    ax.set_xticks(xticks, crs=ccrs.PlateCarree())
-    ax.set_yticks(yticks, crs=ccrs.PlateCarree())
-    ax.xaxis.set_major_formatter(LongitudeFormatter(number_format='.0f'))
-    ax.yaxis.set_major_formatter(LatitudeFormatter(number_format='.0f'))
-    
-    ax.tick_params(
-    axis='both',
-    which='major',
-    direction='in',
-    length=2,
-    width=0.6,
-    labelsize=8,
-    top=True,
-    right=True
-    )
+    ##########################
+    # Plotagem América Central e Caribe
+        fig = plt.figure(figsize=(10,5))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        ax.set_extent([-118, -35, -10, 35], crs=ccrs.PlateCarree())
+        xticks = np.arange(-110, -35, 10)
+        yticks = np.arange(-10, 36, 10)
+        ax.set_xticks(xticks, crs=ccrs.PlateCarree())
+        ax.set_yticks(yticks, crs=ccrs.PlateCarree())
+        ax.xaxis.set_major_formatter(LongitudeFormatter(number_format='.0f'))
+        ax.yaxis.set_major_formatter(LatitudeFormatter(number_format='.0f'))
         
-    plt_triang = ax.pcolormesh(
-    lon2d, lat2d, prec_acum,
-    cmap=cmap,
-    norm=norm,
-    shading='auto',
-    transform=proj
-    )
+        ax.tick_params(
+        axis='both',
+        which='major',
+        direction='in',
+        length=2,
+        width=0.6,
+        labelsize=8,
+        top=True,
+        right=True
+        )
+            
+        plt_triang = ax.pcolormesh(
+        lon2d, lat2d, prec_acum,
+        cmap=cmap,
+        norm=norm,
+        shading='auto',
+        transform=proj
+        )
 
-# Contornos de continentes e linhas costeiras
-    ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
-    ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
-    ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
-    estados = cfeature.NaturalEarthFeature(
-    category='cultural',
-    name='admin_1_states_provinces_lines',
-    scale='50m',
-    facecolor='none'
-    )
-    ax.add_feature(estados, edgecolor='black', linewidth=0.4)
+    # Contornos de continentes e linhas costeiras
+        ax.add_feature(cfeature.COASTLINE.with_scale('50m'), linewidth=0.6)
+        ax.add_feature(cfeature.BORDERS.with_scale('50m'), linewidth=0.4)
+        ax.add_feature(cfeature.LAND.with_scale('50m'), facecolor='none', edgecolor='black', linewidth=0.2)
+        estados = cfeature.NaturalEarthFeature(
+        category='cultural',
+        name='admin_1_states_provinces_lines',
+        scale='50m',
+        facecolor='none'
+        )
+        ax.add_feature(estados, edgecolor='black', linewidth=0.4)
 
-# Linhas de grade
-    gl = ax.gridlines(
-    draw_labels=True,
-    linewidth=0.3,
-    color='gray',
-    alpha=0.5,
-    linestyle='--'
-    )
+    # Linhas de grade
+        gl = ax.gridlines(
+        draw_labels=True,
+        linewidth=0.3,
+        color='gray',
+        alpha=0.5,
+        linestyle='--'
+        )
 
-    gl.top_labels = False
-    gl.right_labels = False
-    gl.bottom_labels = False
-    gl.left_labels = False
-    gl.xlines = False
-    gl.ylines = False
-    gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 10))
-    gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 10))
-    gl.xlabel_style = {'size': 9}
-    gl.ylabel_style = {'size': 9}
+        gl.top_labels = False
+        gl.right_labels = False
+        gl.bottom_labels = False
+        gl.left_labels = False
+        gl.xlines = False
+        gl.ylines = False
+        gl.xlocator = plt.FixedLocator(np.arange(-180, 181, 10))
+        gl.ylocator = plt.FixedLocator(np.arange(-60, 61, 10))
+        gl.xlabel_style = {'size': 9}
+        gl.ylabel_style = {'size': 9}
 
-# Barra de cores
-    cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
-    cbar.set_label('(mm/day)')
-    cbar.set_ticks(clevs)
+    # Barra de cores
+        cbar = plt.colorbar(plt_triang, orientation='vertical', pad=0.1, aspect=50, boundaries=clevs, extend='max')
+        cbar.set_label('(mm/day)')
+        cbar.set_ticks(clevs)
 
-# Titulo
-    plt.title(
-    f'MONAN {data_inicial}+{data_str_e} - 24h prec accum for {Fct}h \n' 
-    f'ACC - {max_str_ACC} | {media_str_ACC}', 
-    fontsize=12
-    )
-# Salvar figura
-    nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_ACC.png"
-    caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
-    plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    # Titulo
+        plt.title(
+        f'MONAN {data_inicial}+{data_str_e} - 24h prec accum for {Fct}h \n' 
+        f'ACC - {max_str_ACC} | {media_str_ACC}', 
+        fontsize=12
+        )
+    # Salvar figura
+        nome_arquivo = f"MONAN_24precacum_{data_inicial}_{data_str_e}_ACC.png"
+        caminho_out = f"{OUTPUT_PATH}/{args.ANO}{args.MES}/{data_inicial}/"
+        plt.savefig(os.path.join(caminho_out, nome_arquivo), dpi=300, bbox_inches="tight")
+        plt.close(fig)
 
 
 # Salvando o arquivo NetCDF

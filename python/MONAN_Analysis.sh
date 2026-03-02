@@ -1,31 +1,46 @@
 #!/bin/bash
 
+exec > >(tee MONAN_Analysis_output.txt) 2>&1
+
+##########################
+
+#####  #####  #####  #####
+#      #   #  # # #  #   #
+# ###  #####  # # #  #####
+#   #  #   #  # # #  #   #
+#####  #   #  # # #  #   #
+
 ##########################
 # Analysis scripts files #
 ##########################
 
-prec="MONAN_Prec.py"                    #OK
-bias="MONAN_Bias.py"                    #OK
-mae="MONAN_Mae.py"                      #OK
-skill="MONAN_Skill.py"                  #OK
-monthly_mean="MONAN_monthly_mean.sh"    #OK
-mean_bias="MONAN_mean_Bias.py"          #OK
-mean_Mae="MONAN_mean_Mae.py"            #OK
-mean_RMSE="MONAN_mean_RMSE.py"          #OK
-mean_skill="MONAN_mean_Skill.py"        #OK
-heatmap="MONAN_Heatmap.py"
+PREC="MONAN_Prec.py"                    # MONAN_nc_24h_acum_newcolorbar.py
+BIAS="MONAN_Bias.py"                    # Bias_MONAN_x_GPM_x_GSMAP_x_MSWEP.py
+MAE="MONAN_Mae.py"                      # MAE_MONAN_x_GPM_x_GSMAP_x_MSWEP.py
+SKILL="MONAN_Skill.py"                  # Skill_score_MONAN_x_GPM_x_GSMAP_x_MSWEP.py
+MONTHLY_MEAN="MONAN_monthly_mean.sh"    # Gera_monthly_*.sh
+MEAN_BIAS="MONAN_mean_Bias.py"          # Mean_Bias_MONAN_BAM_GFS.py
+MEAN_MAE="MONAN_mean_Mae.py"            # Mean_MAE_MONAN_BAM_GFS.py
+MEAN_RMSE="MONAN_mean_RMSE.py"          # Mean_RMSE_MONAN_BAM_GFS.py
+MEAN_SKILL="MONAN_mean_Skill.py"        # Mean_Skill_score_MONAN_BAM_GFS.py
+HEATMAP="MONAN_Heatmap.py"              # Plot_Series_Heatmap_skill_score_MONAN_BAM_GFS.py
 
 #####################################################################
 # Input and output directories                                      #
 # NETCDF_PATH: Where the comparison NetCDF files are located        #
 # MONAN_PATH: Where the MONAN simulation output files are located   #
 # OUTPUT_PATH: Where the analysis results will be saved             #
+# LISTA_PATH: Where the monthly mean lists will be saved            #
+# PREFIXO_ARQ: Prefix for the MONAN output files                    #
+# SUFIXO_ARQ: Suffix for the MONAN output files                     #
 #####################################################################
 
 NETCDF_PATH="/home2/eduardo.eras/workspace/NetCDFs/"
 MONAN_PATH="/p/projetos/monan_atm/eduardo.eras/MONAN/scripts_CD-CT/dataout/"
 OUTPUT_PATH="/home2/eduardo.eras/workspace/python/output/"
 LISTA_PATH="/home2/eduardo.eras/workspace/python/listas_medias"
+PREFIXO_ARQ="MONAN_DIAG_G_POS_GFS_"
+SUFIXO_ARQ=".00.00.x655362L55.nc"
 
 #####################################################################
 # Erase old output files to avoid confusion (optional, be careful!) #
@@ -38,12 +53,16 @@ rm -rf ${LISTA_PATH}/*
 ##########################################################
 
 #Full range simulation
-#start_date="2025-11-26" 
-#end_date="2025-12-30"
+START_DATE="2025-12-01" 
+END_DATE="2025-12-30"
 
-#Short range testing simulation
-start_date="2025-12-25" 
-end_date="2025-12-30"
+#Short range simulation
+#START_DATE="2025-12-10" 
+#END_DATE="2025-12-19"
+
+#Test simulation
+#START_DATE="2025-12-10" 
+#END_DATE="2025-12-11"
 
 ###################################################
 # Simulation span in hours (e.g., 120 for 5 days) #
@@ -60,12 +79,13 @@ THRESHOLD=(1 2 5 10 20 50)
 ######################################
 # Analysis name for output directory #
 ######################################
-ANALYSIS_NAME="5_days_mean" # e.g., "full_range", "short_test", etc.
+ANALYSIS_NAME="30_days_mean" # e.g., "full_range", "short_test", etc.
 
-#####################
-# Generate figures? #
-#####################
-GENERATE_FIGURES=true
+##################################
+# Generate Plot Maps?            #
+# Set to 1 for True, 0 for False #
+##################################
+GENERATE_MAPS=1
 
 #################################################################################
 #                                                                               #
@@ -124,8 +144,8 @@ print_status() {
 
 base_analysis() {
     #Convert dates to Unix timestamps for looping
-    start_ts=$(date -d "$start_date" +%s)
-    end_ts=$(date -d "$end_date" +%s)
+    start_ts=$(date -d "$START_DATE" +%s)
+    end_ts=$(date -d "$END_DATE" +%s)
 
     #Looping over dates (the sane way)
     #Strategy: Convert dates to Unix timestamps (seconds since 1970-01-01),
@@ -134,78 +154,78 @@ base_analysis() {
     for (( ts = start_ts; ts <= end_ts; ts += 86400 )); do
 
         #Get individual date elements
-        YEAR=$(date -d "@$ts" +%Y)
-        MONTH=$(date -d "@$ts" +%m)
-        DAY=$(date -d "@$ts" +%d)
-        HOUR=$(date -d "@$ts" +%H)
+        year=$(date -d "@$ts" +%Y)
+        month=$(date -d "@$ts" +%m)
+        day=$(date -d "@$ts" +%d)
+        hour=$(date -d "@$ts" +%H)
 
         simulation_date=$(date -d "@$ts" +%Y%m%d00)
-        message="* * * Simulation for date: ${YEAR} ${MONTH} ${DAY} with span: $LENGTH hours * * *"
+        message="* * * Simulation for date: ${year} ${month} ${day} with span: $LENGTH hours * * *"
         print_header "$message"
 
         #Run the analysis scripts
         print_status "24 hours precipitation accumulation"
-        python ${prec} ${YEAR} ${MONTH} ${DAY} ${HOUR} ${LENGTH} ${MONAN_PATH} ${OUTPUT_PATH}
+        python ${PREC} ${year} ${month} ${day} ${hour} ${LENGTH} ${MONAN_PATH} ${OUTPUT_PATH} ${PREFIXO_ARQ} ${SUFIXO_ARQ} ${GENERATE_MAPS}
 
         print_status "Bias analysis"
-        python ${bias} ${YEAR} ${MONTH} ${DAY} ${HOUR} ${LENGTH} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${BIAS} ${year} ${month} ${day} ${hour} ${LENGTH} ${NETCDF_PATH} ${OUTPUT_PATH} ${GENERATE_MAPS}
 
         print_status "MAE analysis"
-        python ${mae} ${YEAR} ${MONTH} ${DAY} ${HOUR} ${LENGTH} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${MAE} ${year} ${month} ${day} ${hour} ${LENGTH} ${NETCDF_PATH} ${OUTPUT_PATH} ${GENERATE_MAPS}
+
+        print_status "Skill score analysis"
+        for THR in "${THRESHOLD[@]}"; do
+            print_status "Skill score analysis for threshold: ${THR} mm"
+            python ${SKILL} ${year} ${month} ${day} ${hour} ${LENGTH} ${THR} ${NETCDF_PATH} ${OUTPUT_PATH}
+        done
 
     done
 }
 
 monthly_analysis() {
     processes=("bias" "rmse" "skill")
-    INI_VALID=$(date -d "${start_date} 00:00" +%Y%m%d%H)
-    FIM_VALID=$(date -d "${end_date} 23:00" +%Y%m%d%H)
+    ini_valid=$(date -d "${START_DATE} 00:00" +%Y%m%d%H)
+    fim_valid=$(date -d "${END_DATE} 23:00" +%Y%m%d%H)
     for proc in "${processes[@]}"; do
         print_status "Computing monthly mean for process: ${proc}"
         if [ "${proc}" == "skill" ]; then
             for THR in "${THRESHOLD[@]}"; do
                 print_status "Computing monthly mean for skill score with threshold: ${THR} mm"
-                bash ${monthly_mean} ${INI_VALID} ${FIM_VALID} ${proc} ${OUTPUT_PATH} ${ANALYSIS_NAME} ${THR}
+                bash ${MONTHLY_MEAN} ${ini_valid} ${fim_valid} ${proc} ${OUTPUT_PATH} ${ANALYSIS_NAME} ${THR}
             done
         else
-            bash ${monthly_mean} ${INI_VALID} ${FIM_VALID} ${proc} ${OUTPUT_PATH} ${ANALYSIS_NAME} 
+            bash ${MONTHLY_MEAN} ${ini_valid} ${fim_valid} ${proc} ${OUTPUT_PATH} ${ANALYSIS_NAME} 
         fi
-    done
-
-    print_status "Skill score analysis"
-    for THR in "${THRESHOLD[@]}"; do
-        print_status "Skill score analysis for threshold: ${THR} mm"
-        python ${skill} ${YEAR} ${MONTH} ${DAY} ${HOUR} ${LENGTH} ${THR} ${NETCDF_PATH} ${OUTPUT_PATH}
     done
 }
 
 mean_analysis() {
     print_status "Mean bias, MAE, RMSE and skill score across all lead times"
-    ano=${start_date:0:4}
-    mes=${start_date:5:2}
+    ano=${START_DATE:0:4}
+    mes=${START_DATE:5:2}
     dominio=(GLB AMS ACC)
     for dom in "${dominio[@]}"; do
-        python ${mean_bias} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
-        python ${mean_Mae} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
-        python ${mean_RMSE} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${MEAN_BIAS} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${MEAN_MAE} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${MEAN_RMSE} ${ano} ${mes} ${dom} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
     done
 }
 
 skill_analysis() {
     print_status "Mean skill score across all lead times for different thresholds"
-    ano=${start_date:0:4}
-    mes=${start_date:5:2}
+    ano=${START_DATE:0:4}
+    mes=${START_DATE:5:2}
     for THR in "${THRESHOLD[@]}"; do
-        python ${mean_skill} ${ano} ${mes} ${THR} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH}
+        python ${MEAN_SKILL} ${ano} ${mes} ${THR} ${ANALYSIS_NAME} ${NETCDF_PATH} ${OUTPUT_PATH} ${GENERATE_MAPS}
     done
 }
 
 heatmap_analysis() {
     print_status "Generating heatmaps for skill scores"
-    ano=${start_date:0:4}
-    mes=${start_date:5:2}
+    ano=${START_DATE:0:4}
+    mes=${START_DATE:5:2}
     for reg in "GLB" "AMS" "ACC"; do
-        python ${heatmap} ${ano} ${mes} ${reg} ${ANALYSIS_NAME} ${OUTPUT_PATH}
+        python ${HEATMAP} ${ano} ${mes} ${reg} ${ANALYSIS_NAME} ${OUTPUT_PATH}
     done
 }
 
@@ -226,17 +246,30 @@ echo " ____) |    | |  /  _____  \ | \ \     | |    "
 echo "|_____/     |_| /__/     \__\|  \_\    |_|    "
 echo -e "##############################################\n"
 
+# Record the start time for runtime calculation
+START_TIME=$(date +%s)
+
+# Run the analysis functions in sequence ###################################
 base_analysis
-
 monthly_analysis
-
-mean_analysis
-
+if [ $GENERATE_MAPS -eq 1 ]; then
+    mean_analysis
+fi
 skill_analysis
-
 heatmap_analysis
+#############################################################################
+
+# Record the end time and calculate elapsed time
+END_TIME=$(date +%s)
+ELAPSED=$((END_TIME - START_TIME))
 
 print_header "* * *               MONAN Analysis finished.               * * *"
+
+# Print total runtime in HH:MM:SS format
+printf "Total runtime: %02d:%02d:%02d\n" \
+       $((ELAPSED/3600)) \
+       $((ELAPSED%3600/60)) \
+       $((ELAPSED%60))
 
 echo -e "\n############################################"
 echo " ______  _____  _   _  _____  _____  _    _ "

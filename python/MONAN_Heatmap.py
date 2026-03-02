@@ -430,4 +430,4 @@ for metrica in METRICAS_PRINCIPAIS:
         plt.savefig(out, dpi=150, bbox_inches="tight")
         plt.close()
 
-print("Fim do Script.")
+print("\nFim do Script.\n")

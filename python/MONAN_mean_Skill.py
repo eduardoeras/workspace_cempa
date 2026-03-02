@@ -43,6 +43,7 @@ parser.add_argument("THRESHOLD", type=str, help="Valor do limiar de precipitaç�
 parser.add_argument('ANALYSIS_NAME', type=str, help='Nome do conjunto de analises (ex: monthly_means, 10_days_means, etc.)')
 parser.add_argument('NETCDF_PATH', type=str, help='Caminho base para os arquivos de comparação (NetCDF)')
 parser.add_argument('OUTPUT_PATH', type=str, help='Caminho base para os arquivos de saída (imagens e NetCDF)')
+parser.add_argument('GENERATE_MAPS', type=int, help='Gerar mapas? (1 para True, 0 para False)')
 
 args = parser.parse_args()
 
@@ -52,6 +53,9 @@ THRESHOLD = float(args.THRESHOLD)
 ANALYSIS_NAME = args.ANALYSIS_NAME
 NETCDF_PATH = Path(args.NETCDF_PATH)
 OUTPUT_PATH = Path(args.OUTPUT_PATH)
+
+# Processamento do argumento para gerar mapas
+GENERATE_MAPS = args.GENERATE_MAPS
 
 # ==========================================================
 # PARAMETROS
@@ -79,10 +83,13 @@ DIR_TXT = (
     f"Skill_txt_thr{int(THRESHOLD)}mm/{ANO}{MES:02d}/{ANO}{MES:02d}_aggregated"
 )
 
-DIR_FIG = (
-    f"{OUTPUT_PATH}/Skill/{ANALYSIS_NAME}/"
-    "Skill_fig_mensal"
-)
+if GENERATE_MAPS:
+# Diretorio de saida das figuras
+    print("Gerando figuras...")
+    DIR_FIG = (
+        f"{OUTPUT_PATH}/Skill/{ANALYSIS_NAME}/"
+        "Skill_fig_mensal"
+    )
 
 # ==========================================================
 # DOMINIOS E FIGURAS
@@ -289,6 +296,7 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
 
         # TXT
         for modelo in MODELOS:
+
             with open(txt_files[modelo], "a") as f:
                 for ref in REFERENCIAS:
                     H = dados[modelo][ref]["H"]
@@ -312,75 +320,76 @@ for lead in range(PRAZO_INICIAL, PRAZO_FINAL + 1, PASSO_PRAZO):
                     )
 
         # FIGURAS 
-        os.makedirs(DIR_FIG, exist_ok=True)
+        if GENERATE_MAPS:
+            os.makedirs(DIR_FIG, exist_ok=True)
 
-        for indice in INDICES_ESPACIAIS:
+            for indice in INDICES_ESPACIAIS:
 
-            cfg = SKILL_PLOT[indice]
+                cfg = SKILL_PLOT[indice]
 
-            fig, axes = plt.subplots(
-                nrows=3,
-                ncols=3,
-                figsize=fig_params["figsize"],
-                subplot_kw={"projection": ccrs.PlateCarree()}
-            )
+                fig, axes = plt.subplots(
+                    nrows=3,
+                    ncols=3,
+                    figsize=fig_params["figsize"],
+                    subplot_kw={"projection": ccrs.PlateCarree()}
+                )
 
-            for i, modelo in enumerate(MODELOS):
-                for j, ref in enumerate(REFERENCIAS):
+                for i, modelo in enumerate(MODELOS):
+                    for j, ref in enumerate(REFERENCIAS):
 
-                    ax = axes[i, j]
+                        ax = axes[i, j]
 
-                    H = dados[modelo][ref]["H"]
-                    M = dados[modelo][ref]["M"]
-                    F = dados[modelo][ref]["F"]
-                    C = dados[modelo][ref]["C"]
+                        H = dados[modelo][ref]["H"]
+                        M = dados[modelo][ref]["M"]
+                        F = dados[modelo][ref]["F"]
+                        C = dados[modelo][ref]["C"]
 
-                    campo = skill_spatial(H, M, F, C)[indice]
+                        campo = skill_spatial(H, M, F, C)[indice]
 
-                    im = ax.pcolormesh(
-                        campo.lon,
-                        campo.lat,
-                        campo,
-                        cmap=cfg["cmap"],
-                        vmin=cfg["vmin"],
-                        vmax=cfg["vmax"],
-                        shading="auto"
-                    )
+                        im = ax.pcolormesh(
+                            campo.lon,
+                            campo.lat,
+                            campo,
+                            cmap=cfg["cmap"],
+                            vmin=cfg["vmin"],
+                            vmax=cfg["vmax"],
+                            shading="auto"
+                        )
 
-                    ax.coastlines(resolution="110m", linewidth=0.8)
-                    ax.add_feature(cfeature.BORDERS, linewidth=0.4)
+                        ax.coastlines(resolution="110m", linewidth=0.8)
+                        ax.add_feature(cfeature.BORDERS, linewidth=0.4)
 
-                    gl = ax.gridlines(draw_labels=True, linewidth=0.3,
-                                      linestyle=":", color="gray")
-                    gl.top_labels = False
-                    gl.right_labels = False
-                    gl.xlabel_style = {"size": 8}
-                    gl.ylabel_style = {"size": 8}
-                    gl.xformatter = LONGITUDE_FORMATTER
-                    gl.yformatter = LATITUDE_FORMATTER
+                        gl = ax.gridlines(draw_labels=True, linewidth=0.3,
+                                        linestyle=":", color="gray")
+                        gl.top_labels = False
+                        gl.right_labels = False
+                        gl.xlabel_style = {"size": 8}
+                        gl.ylabel_style = {"size": 8}
+                        gl.xformatter = LONGITUDE_FORMATTER
+                        gl.yformatter = LATITUDE_FORMATTER
 
-                    ax.set_title(f"{modelo} x {ref}", fontsize=10)
+                        ax.set_title(f"{modelo} x {ref}", fontsize=10)
 
-            cbar = fig.colorbar(
-                im,
-                ax=axes,
-                orientation="vertical",
-                shrink=0.85,
-                pad=0.02
-            )
+                cbar = fig.colorbar(
+                    im,
+                    ax=axes,
+                    orientation="vertical",
+                    shrink=0.85,
+                    pad=0.02
+                )
 
-            fig.suptitle(
-                f"{indice} mensal | {ANO}{MES:02d} | "
-                f"F{lead:03d} | Thr {THRESHOLD} mm | {dominio}",
-                fontsize=15
-            )
+                fig.suptitle(
+                    f"{indice} mensal | {ANO}{MES:02d} | "
+                    f"F{lead:03d} | Thr {THRESHOLD} mm | {dominio}",
+                    fontsize=15
+                )
 
-            fig.savefig(
-                f"{DIR_FIG}/{indice}_{dominio}_{ANO}{MES:02d}_"
-                f"p{lead:03d}h_thr{int(THRESHOLD)}mm.png",
-                dpi=300,
-                bbox_inches="tight"
-            )
+                fig.savefig(
+                    f"{DIR_FIG}/{indice}_{dominio}_{ANO}{MES:02d}_"
+                    f"p{lead:03d}h_thr{int(THRESHOLD)}mm.png",
+                    dpi=300,
+                    bbox_inches="tight"
+                )
 
-            plt.close(fig)
+                plt.close(fig)
 
